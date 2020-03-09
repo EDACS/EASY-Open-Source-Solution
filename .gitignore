@@ -5,3 +5,4 @@
 .sfdx/
 /test_results.xml
 build.properties
+sfdx-project.json
