@@ -1,0 +1,98 @@
+<!--
+ - Created by maxim_elets on 10/23/19.
+ -->
+
+<apex:page id="ApplicationClone" title="Application Clone" standardController="Application__c"
+		   extensions="ApplicationCloneController" lightningStylesheets="true" tabStyle="Application__c"
+		   showHeader="false" standardStylesheets="false" docType="html-5.0">
+	<apex:includeLightning />
+	<apex:slds />
+	<style type="text/css">
+		.fs-14, .fs-14 * {
+			font-size: 14px !important;
+			font-weight: 500;
+		}
+		.w-600 {
+			width: 600px;
+			margin: 0 auto;
+		}
+		.slds-progress-bar__value {
+			transition: all 2s;
+		}
+	</style>
+	<div class="slds-scope">
+		<apex:outputPanel id="messagespanel" layout="block">
+			<apex:outputPanel id="messagespanel_inner" layout="block" rendered="{!cloneNotAvailable}">
+				<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+					<div class="fs-14">
+						<apex:messages id="messages"></apex:messages>
+					</div>
+				</div>
+			</apex:outputPanel>
+		</apex:outputPanel>
+		<div class="slds-box w-600">
+			<apex:actionStatus id="loading">
+				<apex:facet name="start">
+					<div class="slds-spinner_container slds-is-fixed">
+						<div role="status" class="slds-spinner slds-spinner_medium">
+							<span class="slds-assistive-text">Loading</span>
+							<div class="slds-spinner__dot-a"></div>
+							<div class="slds-spinner__dot-b"></div>
+						</div>
+					</div>
+				</apex:facet>
+			</apex:actionStatus>
+
+			<apex:form id="form">
+				<apex:outputPanel layout="block" rendered="{!cloneNotAvailable}">
+					<apex:outputLink styleClass="slds-button slds-button_neutral" value="/{!applicationId}">Back to Application</apex:outputLink>
+				</apex:outputPanel>
+
+				<apex:outputPanel layout="block" rendered="{!NOT(cloneNotAvailable)}">
+					<apex:outputPanel layout="block" rendered="{!NOT(cloneInProgress)}">
+						<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert">
+							<h2>Do not forget to specify clone comment.</h2>
+						</div>
+						<div class="slds-form-element">
+							<label class="slds-form-element__label">{!$ObjectType.Application__c.fields.Clone_Comment__c.Label}</label>
+							<div class="slds-form-element__control">
+								<apex:inputTextarea value="{!cloneComment}" label="{!$ObjectType.Application__c.fields.Clone_Comment__c.Label}"
+													styleClass="slds-input"></apex:inputTextarea>
+							</div>
+						</div>
+					</apex:outputPanel>
+					<apex:outputPanel id="progressbar" layout="block" rendered="{!cloneInProgress}">
+						<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert">
+							<h2>Clone is currently in progress. Please check back soon.</h2>
+						</div>
+						<div  class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" role="progressbar">
+							<span id="progressbar_id" class="slds-progress-bar__value" style="width:0%">
+								<span class="slds-assistive-text">Cloning ...</span>
+							</span>
+						</div>
+
+						<script type="text/javascript">
+							setInterval(function() {
+								var width = parseInt(document.getElementById("progressbar_id").style.width);
+								width++;
+								if (width > 100) {
+									width = 0;
+								}
+								document.getElementById("progressbar_id").style.width = width+"%";
+							}, 1000);
+
+							setTimeout(function() {
+								document.querySelector(".go-back-btn").click();
+							}, 10000);
+						</script>
+					</apex:outputPanel>
+					<apex:commandButton value="Clone" action="{!doClone}" styleClass="slds-button slds-button_brand"
+										status="loading" rendered="{!NOT(cloneInProgress)}"
+										reRender="progressbar,messagespanel,form"></apex:commandButton>
+
+					<apex:outputLink styleClass="slds-button slds-button_neutral go-back-btn" value="/{!applicationId}">Back to Application</apex:outputLink>
+				</apex:outputPanel>
+			</apex:form>
+		</div>
+	</div>
+</apex:page>
