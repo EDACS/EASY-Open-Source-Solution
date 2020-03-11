@@ -261,6 +261,37 @@ null)</formula>
         <type>Summary</type>
     </fields>
     <fields>
+        <fullName>Percentage_Complete__c</fullName>
+        <description>This identifies completeness.</description>
+        <externalId>false</externalId>
+        <label>Percentage Complete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Progress__c</fullName>
+        <externalId>false</externalId>
+        <formula>/* Create an opening border of grey on the far left, 18 px high and 2 px wide */ 
+IMAGE(&quot;/resource/1543355379000/Gray?&quot;, &quot;/Grey&quot;, 18, 2)
+&amp;
+/* Create a green bar to represent completeness of the task, 18 px high and of a width of the % field value (1% = 1px) */
+IMAGE(&quot;/resource/1543355363000/Green?&quot;, &quot;/Green&quot;, 18, Percentage_Complete__c * 100)
+&amp;
+/* Create a grey bar to represent incompleteness of the task, 18 px high and of a width controlled by 1-% field value */
+IMAGE(&quot;/resource/1543355379000/Gray?&quot;, &quot;/Grey&quot;, 18, (1 - Percentage_Complete__c) * 100)
+&amp;
+/* Create a closing border of grey on the far right, 18 pixels high and 2 px wide */IMAGE(&quot;/resource/1543355379000/Gray?&quot;, &quot;/Grey&quot;, 18, 2)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Progress</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Question_Group_Requirement_Fulfilled_On__c</fullName>
         <description>The max date/time that a Question with IsRequired__c == true was fulfilled.</description>
         <externalId>false</externalId>
@@ -313,6 +344,16 @@ null)</formula>
         <description>Indicates whether the applicant has viewed the requirement and related questions yet. Enables application architect to prevent submission until all requirements have been viewed.</description>
         <externalId>false</externalId>
         <label>Viewed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Waive_Requirement__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, this Requirement Response will be marked as complete, regardless of whether or not anything is filled-in.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, this Requirement Response will be marked as complete, regardless of whether or not anything is filled-in.</inlineHelpText>
+        <label>Waive Requirement</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>

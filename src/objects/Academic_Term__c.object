@@ -152,7 +152,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>Activate_Application_Date__c</fullName>
         <externalId>false</externalId>
@@ -186,6 +186,41 @@ Activate_Application_Date__c &lt;=  TODAY() &amp;&amp; End_Application_Date__c  
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>External_ID__c</fullName>
+        <description>This is the code or abbreviation used in Colleague and is helpful for integration.</description>
+        <externalId>false</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Term_Census_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Term_Start_Date__c + 10</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Term Census Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Term_EDA__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the E.D.A. Term Object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to the E.D.A. Term Object</inlineHelpText>
+        <label>Term (EDA)</label>
+        <referenceTo>hed__Term__c</referenceTo>
+        <relationshipLabel>Academic Terms (Term)</relationshipLabel>
+        <relationshipName>Academic_Terms1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Term_End_Date__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>End date for this term.</inlineHelpText>
@@ -217,6 +252,19 @@ Term_Start_Date__c &lt;= TODAY() &amp;&amp; Term_End_Date__c &gt;= TODAY(), &quo
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>Term__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to E.D.A. Term</description>
+        <externalId>false</externalId>
+        <label>Term (Custom)</label>
+        <referenceTo>hed__Term__c</referenceTo>
+        <relationshipLabel>Academic Terms</relationshipLabel>
+        <relationshipName>Academic_Terms</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
     <label>Academic Term</label>
     <listViews>
         <fullName>All</fullName>
@@ -229,6 +277,22 @@ Term_Start_Date__c &lt;= TODAY() &amp;&amp; Term_End_Date__c &gt;= TODAY(), &quo
         <columns>Term_Status__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Application_Terms</fullName>
+        <columns>NAME</columns>
+        <columns>Application_Status__c</columns>
+        <columns>Term_EDA__c</columns>
+        <columns>Term_Start_Date__c</columns>
+        <columns>Term_End_Date__c</columns>
+        <columns>Term_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Application_Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <label>All Application Terms</label>
     </listViews>
     <nameField>
         <label>Academic Term Name</label>

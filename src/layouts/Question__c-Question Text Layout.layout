@@ -223,6 +223,8 @@
         <fields>NAME</fields>
         <fields>Controlling_Question__c</fields>
         <fields>RECORDTYPE</fields>
+        <fields>ValueCheckbox__c</fields>
+        <fields>Value__c</fields>
         <relatedList>Question_Dependency__c.Question__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

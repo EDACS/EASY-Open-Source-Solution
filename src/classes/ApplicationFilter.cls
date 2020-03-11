@@ -49,8 +49,8 @@ public class ApplicationFilter {
             return false;
         if (String.isNotBlank(degreeTypes) && (String.isBlank(app.Degree_Type__c) || !(new Set<String>(degreeTypes.split(';'))).contains(app.Degree_Type__c)))
             return false;
-        if (String.isNotBlank(genericFilters1) && (String.isBlank(app.Generic_Filter_1__c) || !(new Set<String>(genericFilters1.split(';'))).contains(app.Generic_Filter_1__c)))
-            return false;
+         if (String.isNotBlank(genericFilters1) && (String.isBlank(app.Generic_Filter_1__c) || !(new Set<String>(genericFilters1.split(';'))).contains(app.Generic_Filter_1__c)))
+             return false;
         if (String.isNotBlank(genericFilters2) && (String.isBlank(app.Generic_Filter_2__c) || !(new Set<String>(genericFilters2.split(';'))).contains(app.Generic_Filter_2__c)))
             return false;
         if (String.isNotBlank(genericFilters3) && (String.isBlank(app.Generic_Filter_3__c) || !(new Set<String>(genericFilters3.split(';'))).contains(app.Generic_Filter_3__c)))

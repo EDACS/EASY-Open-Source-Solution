@@ -392,6 +392,17 @@ Activate_Application_Date__c  &lt;=  TODAY() &amp;&amp; End_Application_Date__c 
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <columns>NAME</columns>
+        <columns>Academic_Term__c</columns>
+        <columns>Intended_Program__c</columns>
+        <columns>Activate_Application_Date__c</columns>
+        <columns>End_Application_Date__c</columns>
+        <columns>Applicant_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>Intended Program Term Name</label>
         <type>Text</type>

@@ -149,7 +149,12 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Label__c</fields>
+        <fields>Display_Order__c</fields>
         <fields>Active__c</fields>
+        <fields>Internal_Only__c</fields>
+        <fields>Internal_Only_Show_on_Checklist__c</fields>
+        <fields>Intended_Program__c</fields>
         <relatedList>Requirement__c.Application_Control__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
@@ -158,7 +163,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hc0000000YIMz</masterLabel>
+        <masterLabel>00h2E00000J1t7F</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

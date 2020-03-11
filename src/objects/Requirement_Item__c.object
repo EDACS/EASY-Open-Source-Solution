@@ -568,6 +568,11 @@
                     <default>false</default>
                     <label>Employment_History__c</label>
                 </value>
+                <value>
+                    <fullName>hed__Affiliation__c</fullName>
+                    <default>false</default>
+                    <label>hed__Affiliation__c</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -726,7 +731,7 @@
         <picklistValues>
             <picklist>Applicant_Type__c</picklist>
             <values>
-                <fullName>Freshman</fullName>
+                <fullName>Certificate</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -734,7 +739,15 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Transfer</fullName>
+                <fullName>Parrott Institute Certified Life Coach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Salvation Army</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undergraduate</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -745,35 +758,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -826,14 +811,6 @@
         <picklistValues>
             <picklist>Delivery_Type__c</picklist>
             <values>
-                <fullName>Evenings and Weekends</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>On-Campus</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Online</fullName>
                 <default>false</default>
             </values>
@@ -845,35 +822,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -913,17 +862,6 @@
             </values>
             <values>
                 <fullName>TXT</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Generic_Filter_1__c</picklist>
-            <values>
-                <fullName>Generic Value 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Generic Value 2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -981,6 +919,10 @@
                 <fullName>Education_History%5F%5Fc</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>hed%5F%5FAffiliation%5F%5Fc</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Required_Supporting_Documentation__c</picklist>
@@ -989,35 +931,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1040,35 +954,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1098,18 +984,6 @@
         <picklistValues>
             <picklist>School_College__c</picklist>
             <values>
-                <fullName>College of Arts and Sciences</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>College of Health Professions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Graduate</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>School of Business</fullName>
                 <default>false</default>
             </values>
@@ -1121,11 +995,11 @@
         <picklistValues>
             <picklist>Student_Type__c</picklist>
             <values>
-                <fullName>Adult</fullName>
+                <fullName>Adult Studies</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Traditional</fullName>
+                <fullName>Graduate</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1138,7 +1012,7 @@
         <picklistValues>
             <picklist>Applicant_Type__c</picklist>
             <values>
-                <fullName>Freshman</fullName>
+                <fullName>Certificate</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1146,7 +1020,15 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Transfer</fullName>
+                <fullName>Parrott Institute Certified Life Coach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Salvation Army</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undergraduate</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1157,35 +1039,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1238,14 +1092,6 @@
         <picklistValues>
             <picklist>Delivery_Type__c</picklist>
             <values>
-                <fullName>Evenings and Weekends</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>On-Campus</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Online</fullName>
                 <default>false</default>
             </values>
@@ -1257,35 +1103,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1325,17 +1143,6 @@
             </values>
             <values>
                 <fullName>TXT</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Generic_Filter_1__c</picklist>
-            <values>
-                <fullName>Generic Value 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Generic Value 2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1393,6 +1200,10 @@
                 <fullName>Education_History%5F%5Fc</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>hed%5F%5FAffiliation%5F%5Fc</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Required_Supporting_Documentation__c</picklist>
@@ -1401,35 +1212,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1452,35 +1235,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1510,18 +1265,6 @@
         <picklistValues>
             <picklist>School_College__c</picklist>
             <values>
-                <fullName>College of Arts and Sciences</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>College of Health Professions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Graduate</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>School of Business</fullName>
                 <default>false</default>
             </values>
@@ -1533,11 +1276,11 @@
         <picklistValues>
             <picklist>Student_Type__c</picklist>
             <values>
-                <fullName>Adult</fullName>
+                <fullName>Adult Studies</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Traditional</fullName>
+                <fullName>Graduate</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1549,7 +1292,7 @@
         <picklistValues>
             <picklist>Applicant_Type__c</picklist>
             <values>
-                <fullName>Freshman</fullName>
+                <fullName>Certificate</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1557,7 +1300,15 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Transfer</fullName>
+                <fullName>Parrott Institute Certified Life Coach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Salvation Army</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undergraduate</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1568,35 +1319,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1649,14 +1372,6 @@
         <picklistValues>
             <picklist>Delivery_Type__c</picklist>
             <values>
-                <fullName>Evenings and Weekends</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>On-Campus</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Online</fullName>
                 <default>false</default>
             </values>
@@ -1668,35 +1383,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1736,17 +1423,6 @@
             </values>
             <values>
                 <fullName>TXT</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Generic_Filter_1__c</picklist>
-            <values>
-                <fullName>Generic Value 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Generic Value 2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1808,6 +1484,10 @@
                 <fullName>Employment_History%5F%5Fc</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>hed%5F%5FAffiliation%5F%5Fc</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Required_Supporting_Documentation__c</picklist>
@@ -1816,35 +1496,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1867,35 +1519,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Complete-Decision Made</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Additional Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete-Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deferred</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Paid</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Deposit Waived</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Incomplete</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1925,18 +1549,6 @@
         <picklistValues>
             <picklist>School_College__c</picklist>
             <values>
-                <fullName>College of Arts and Sciences</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>College of Health Professions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Graduate</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>School of Business</fullName>
                 <default>false</default>
             </values>
@@ -1948,11 +1560,11 @@
         <picklistValues>
             <picklist>Student_Type__c</picklist>
             <values>
-                <fullName>Adult</fullName>
+                <fullName>Adult Studies</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Traditional</fullName>
+                <fullName>Graduate</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

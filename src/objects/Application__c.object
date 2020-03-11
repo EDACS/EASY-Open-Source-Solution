@@ -144,7 +144,19 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>Application</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Application</fullName>
+        <fields>Name</fields>
+        <fields>Contact__c</fields>
+        <fields>Applicant_Type__c</fields>
+        <fields>Intended_Program__c</fields>
+        <fields>Intended_Term_of_Entry__c</fields>
+        <fields>Generic_Filter_1__c</fields>
+        <fields>Application_Status__c</fields>
+        <fields>Admission_Decision__c</fields>
+        <label>Application</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -155,7 +167,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
         <fullName>Application_Preview_Filters</fullName>
         <description>ApplicationRequirementPreview</description>
@@ -172,6 +184,138 @@
         <label>Application Preview Filters</label>
     </fieldSets>
     <fields>
+        <fullName>ACT_Composite__c</fullName>
+        <externalId>false</externalId>
+        <label>ACT Composite</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Academic_Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Academic Program</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Ethos__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Academic Programs</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Ethos__c</referenceTo>
+        <relationshipLabel>Applications (Academic Program)</relationshipLabel>
+        <relationshipName>Applications1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Academic_Success__c</fullName>
+        <externalId>false</externalId>
+        <label>zzAcademic Success</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Acknowledgement_Accuracy__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzAcknowledgement-Accuracy</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Acknowledgement_Promotions_Waiver__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzAcknowledgement-Promotions Waiver</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Acknowledgement_Rights_Waiver__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Waive right to Recommendation</inlineHelpText>
+        <label>Acknowledgement-Rights Waiver</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Admission_Application_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Admission Application Type</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Ethos__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Admissions Application Types</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Ethos__c</referenceTo>
+        <relationshipLabel>Applications (Admission Application Type)</relationshipLabel>
+        <relationshipName>Applications2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Admission_Decision_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Admission Decision Type</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Ethos__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Admission Decision Types</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Ethos__c</referenceTo>
+        <relationshipLabel>Applications (Admission Decision Type)</relationshipLabel>
+        <relationshipName>Applications3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Admission_Decision__c</fullName>
         <externalId>false</externalId>
         <label>Admission Decision</label>
@@ -185,9 +329,114 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Admission_Population__c</fullName>
+        <description>Defines the structure for information about categories of admission populations for prospective students</description>
+        <externalId>false</externalId>
+        <label>zzAdmission Population</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ambition__c</fullName>
+        <externalId>false</externalId>
+        <label>zzAmbition</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anticipated_English_Test_Date__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzAnticipated English Test Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anticipated_Enrollment_Status__c</fullName>
+        <description>Time enrollment status part/full time</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Colleague Course Load</inlineHelpText>
+        <label>Anticipated Enrollment Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Full time</fullName>
+                    <default>false</default>
+                    <label>Full time</label>
+                </value>
+                <value>
+                    <fullName>Part time</fullName>
+                    <default>false</default>
+                    <label>Part time</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Anticipated_Test_Date__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What date do you plan to take an entrance exam?</inlineHelpText>
+        <label>zzAnticipated Test Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>App_Fee_Payment_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>zzApp Fee Payment Method</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Credit Card</fullName>
+                    <default>false</default>
+                    <label>Credit Card</label>
+                </value>
+                <value>
+                    <fullName>Cheque or money order (payable to Briercrest College and Seminary)</fullName>
+                    <default>false</default>
+                    <label>Cheque or money order (payable to Briercrest College and Seminary)</label>
+                </value>
+                <value>
+                    <fullName>Not ready to pay at this time</fullName>
+                    <default>false</default>
+                    <label>Not ready to pay at this time</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Applicant_Type__c</fullName>
         <description>Type of applicant this is.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Admit Type in Colleague</inlineHelpText>
         <label>Applicant Type</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -197,6 +446,17 @@
             <restricted>true</restricted>
             <valueSetName>Applicant_Types</valueSetName>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Application_Comments__c</fullName>
+        <description>For integration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Do not use, for integration only</inlineHelpText>
+        <label>Application Comments</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Application_Control__c</fullName>
@@ -212,6 +472,68 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Application_Decision_Sent_to_Colleague__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Application Decision Sent to Colleague</description>
+        <externalId>false</externalId>
+        <label>Application Decision Sent to Colleague</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Application_Folder_Status__c</fullName>
+        <description>This field is for Academic Services and gives visibility into where an application is in the decision-making process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status used for decision-making process</inlineHelpText>
+        <label>Application Folder Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Application in Progress</fullName>
+                    <default>false</default>
+                    <label>Application in Progress</label>
+                </value>
+                <value>
+                    <fullName>Ready for Review</fullName>
+                    <default>false</default>
+                    <label>Ready for Review</label>
+                </value>
+                <value>
+                    <fullName>Review Cancelled</fullName>
+                    <default>false</default>
+                    <label>Review Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Review Complete</fullName>
+                    <default>false</default>
+                    <label>Review Complete</label>
+                </value>
+                <value>
+                    <fullName>Review In Progress</fullName>
+                    <default>false</default>
+                    <label>Review In Progress</label>
+                </value>
+                <value>
+                    <fullName>Review on Hold</fullName>
+                    <default>false</default>
+                    <label>Review on Hold</label>
+                </value>
+                <value>
+                    <fullName>Review Pending More Information</fullName>
+                    <default>false</default>
+                    <label>Review Pending More Information</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Application_Status__c</fullName>
         <externalId>false</externalId>
         <label>Application Status</label>
@@ -223,6 +545,117 @@
             <restricted>true</restricted>
             <valueSetName>Application_Status</valueSetName>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Applied_Elsewhere__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzApplied Elsewhere?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Aptitude__c</fullName>
+        <externalId>false</externalId>
+        <label>zzAptitude</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attendance_Attitude__c</fullName>
+        <externalId>false</externalId>
+        <label>zzAttendance Attitude</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attended_Other_College__c</fullName>
+        <description>Custom field from EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Have you attended other colleges for credit?</inlineHelpText>
+        <label>Attended Other College?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_Picklist</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Campus__c</fullName>
+        <description>Which campus site the applicant is applying to attend</description>
+        <externalId>false</externalId>
+        <label>zzCampus</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Main Campus</fullName>
+                    <default>false</default>
+                    <label>Main Campus</label>
+                </value>
+                <value>
+                    <fullName>Satelite Campus</fullName>
+                    <default>false</default>
+                    <label>Satelite Campus</label>
+                </value>
+                <value>
+                    <fullName>Online</fullName>
+                    <default>false</default>
+                    <label>Online</label>
+                </value>
+                <value>
+                    <fullName>Hybrid</fullName>
+                    <default>false</default>
+                    <label>Hybrid</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Certified_Not_Altered__c</fullName>
+        <description>Custom field to store response from application</description>
+        <externalId>false</externalId>
+        <label>Certified-Not Altered</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Change__c</fullName>
+        <externalId>false</externalId>
+        <label>zzChange</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Citizenship__c</fullName>
@@ -251,6 +684,42 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Class_Rank__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>zzClass Rank</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Clone_Comment__c</fullName>
+        <description>Explanation on the reason for creating the application record clone</description>
+        <externalId>false</externalId>
+        <label>Clone Comment</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Clone_Count__c</fullName>
+        <description>The number of times an application has been cloned</description>
+        <externalId>false</externalId>
+        <label>Clone Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -262,6 +731,1411 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Conviction_Description__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the situation surrounding your arrest/conviction:</inlineHelpText>
+        <label>Conviction Description</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Conviction__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Have you ever been arrested for or convicted of a crime?</inlineHelpText>
+        <label>Conviction</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Country_of_Citizenship__c</fullName>
+        <description>List of countries, where applicant is citizen</description>
+        <externalId>false</externalId>
+        <label>Country of Citizenship</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>United States</fullName>
+                    <default>false</default>
+                    <label>United States</label>
+                </value>
+                <value>
+                    <fullName>Afghanistan</fullName>
+                    <default>false</default>
+                    <label>Afghanistan</label>
+                </value>
+                <value>
+                    <fullName>Aland Islands</fullName>
+                    <default>false</default>
+                    <label>Aland Islands</label>
+                </value>
+                <value>
+                    <fullName>Albania</fullName>
+                    <default>false</default>
+                    <label>Albania</label>
+                </value>
+                <value>
+                    <fullName>Algeria</fullName>
+                    <default>false</default>
+                    <label>Algeria</label>
+                </value>
+                <value>
+                    <fullName>Andorra</fullName>
+                    <default>false</default>
+                    <label>Andorra</label>
+                </value>
+                <value>
+                    <fullName>Angola</fullName>
+                    <default>false</default>
+                    <label>Angola</label>
+                </value>
+                <value>
+                    <fullName>Anguilla</fullName>
+                    <default>false</default>
+                    <label>Anguilla</label>
+                </value>
+                <value>
+                    <fullName>Antarctica</fullName>
+                    <default>false</default>
+                    <label>Antarctica</label>
+                </value>
+                <value>
+                    <fullName>Antigua and Barbuda</fullName>
+                    <default>false</default>
+                    <label>Antigua and Barbuda</label>
+                </value>
+                <value>
+                    <fullName>Argentina</fullName>
+                    <default>false</default>
+                    <label>Argentina</label>
+                </value>
+                <value>
+                    <fullName>Armenia</fullName>
+                    <default>false</default>
+                    <label>Armenia</label>
+                </value>
+                <value>
+                    <fullName>Aruba</fullName>
+                    <default>false</default>
+                    <label>Aruba</label>
+                </value>
+                <value>
+                    <fullName>Australia</fullName>
+                    <default>false</default>
+                    <label>Australia</label>
+                </value>
+                <value>
+                    <fullName>Austria</fullName>
+                    <default>false</default>
+                    <label>Austria</label>
+                </value>
+                <value>
+                    <fullName>Azerbaijan</fullName>
+                    <default>false</default>
+                    <label>Azerbaijan</label>
+                </value>
+                <value>
+                    <fullName>Bahamas</fullName>
+                    <default>false</default>
+                    <label>Bahamas</label>
+                </value>
+                <value>
+                    <fullName>Bahrain</fullName>
+                    <default>false</default>
+                    <label>Bahrain</label>
+                </value>
+                <value>
+                    <fullName>Bangladesh</fullName>
+                    <default>false</default>
+                    <label>Bangladesh</label>
+                </value>
+                <value>
+                    <fullName>Barbados</fullName>
+                    <default>false</default>
+                    <label>Barbados</label>
+                </value>
+                <value>
+                    <fullName>Belarus</fullName>
+                    <default>false</default>
+                    <label>Belarus</label>
+                </value>
+                <value>
+                    <fullName>Belgium</fullName>
+                    <default>false</default>
+                    <label>Belgium</label>
+                </value>
+                <value>
+                    <fullName>Belize</fullName>
+                    <default>false</default>
+                    <label>Belize</label>
+                </value>
+                <value>
+                    <fullName>Benin</fullName>
+                    <default>false</default>
+                    <label>Benin</label>
+                </value>
+                <value>
+                    <fullName>Bermuda</fullName>
+                    <default>false</default>
+                    <label>Bermuda</label>
+                </value>
+                <value>
+                    <fullName>Bhutan</fullName>
+                    <default>false</default>
+                    <label>Bhutan</label>
+                </value>
+                <value>
+                    <fullName>Bolivia</fullName>
+                    <default>false</default>
+                    <label>Bolivia</label>
+                </value>
+                <value>
+                    <fullName>Bonaire</fullName>
+                    <default>false</default>
+                    <label>Bonaire</label>
+                </value>
+                <value>
+                    <fullName>Bosnia and Herzegovina</fullName>
+                    <default>false</default>
+                    <label>Bosnia and Herzegovina</label>
+                </value>
+                <value>
+                    <fullName>Botswana</fullName>
+                    <default>false</default>
+                    <label>Botswana</label>
+                </value>
+                <value>
+                    <fullName>Bouvet Island</fullName>
+                    <default>false</default>
+                    <label>Bouvet Island</label>
+                </value>
+                <value>
+                    <fullName>Brazil</fullName>
+                    <default>false</default>
+                    <label>Brazil</label>
+                </value>
+                <value>
+                    <fullName>British Indian Ocean Territory</fullName>
+                    <default>false</default>
+                    <label>British Indian Ocean Territory</label>
+                </value>
+                <value>
+                    <fullName>Brunei Darussalam</fullName>
+                    <default>false</default>
+                    <label>Brunei Darussalam</label>
+                </value>
+                <value>
+                    <fullName>Bulgaria</fullName>
+                    <default>false</default>
+                    <label>Bulgaria</label>
+                </value>
+                <value>
+                    <fullName>Burkina Faso</fullName>
+                    <default>false</default>
+                    <label>Burkina Faso</label>
+                </value>
+                <value>
+                    <fullName>Burundi</fullName>
+                    <default>false</default>
+                    <label>Burundi</label>
+                </value>
+                <value>
+                    <fullName>Cambodia</fullName>
+                    <default>false</default>
+                    <label>Cambodia</label>
+                </value>
+                <value>
+                    <fullName>Cameroon</fullName>
+                    <default>false</default>
+                    <label>Cameroon</label>
+                </value>
+                <value>
+                    <fullName>Canada</fullName>
+                    <default>false</default>
+                    <label>Canada</label>
+                </value>
+                <value>
+                    <fullName>Cape Verde</fullName>
+                    <default>false</default>
+                    <label>Cape Verde</label>
+                </value>
+                <value>
+                    <fullName>Cayman Islands</fullName>
+                    <default>false</default>
+                    <label>Cayman Islands</label>
+                </value>
+                <value>
+                    <fullName>Central African Republic</fullName>
+                    <default>false</default>
+                    <label>Central African Republic</label>
+                </value>
+                <value>
+                    <fullName>Chad</fullName>
+                    <default>false</default>
+                    <label>Chad</label>
+                </value>
+                <value>
+                    <fullName>Chile</fullName>
+                    <default>false</default>
+                    <label>Chile</label>
+                </value>
+                <value>
+                    <fullName>China</fullName>
+                    <default>false</default>
+                    <label>China</label>
+                </value>
+                <value>
+                    <fullName>Christmas Island</fullName>
+                    <default>false</default>
+                    <label>Christmas Island</label>
+                </value>
+                <value>
+                    <fullName>Cocos (Keeling) Islands</fullName>
+                    <default>false</default>
+                    <label>Cocos (Keeling) Islands</label>
+                </value>
+                <value>
+                    <fullName>Colombia</fullName>
+                    <default>false</default>
+                    <label>Colombia</label>
+                </value>
+                <value>
+                    <fullName>Comoros</fullName>
+                    <default>false</default>
+                    <label>Comoros</label>
+                </value>
+                <value>
+                    <fullName>Congo</fullName>
+                    <default>false</default>
+                    <label>Congo</label>
+                </value>
+                <value>
+                    <fullName>Congo, The Democratic Republic Of The</fullName>
+                    <default>false</default>
+                    <label>Congo, The Democratic Republic Of The</label>
+                </value>
+                <value>
+                    <fullName>Cook Islands</fullName>
+                    <default>false</default>
+                    <label>Cook Islands</label>
+                </value>
+                <value>
+                    <fullName>Costa Rica</fullName>
+                    <default>false</default>
+                    <label>Costa Rica</label>
+                </value>
+                <value>
+                    <fullName>Cote Divoire</fullName>
+                    <default>false</default>
+                    <label>Cote Divoire</label>
+                </value>
+                <value>
+                    <fullName>Croatia</fullName>
+                    <default>false</default>
+                    <label>Croatia</label>
+                </value>
+                <value>
+                    <fullName>Cuba</fullName>
+                    <default>false</default>
+                    <label>Cuba</label>
+                </value>
+                <value>
+                    <fullName>Curacao</fullName>
+                    <default>false</default>
+                    <label>Curacao</label>
+                </value>
+                <value>
+                    <fullName>Cyprus</fullName>
+                    <default>false</default>
+                    <label>Cyprus</label>
+                </value>
+                <value>
+                    <fullName>Czech Republic</fullName>
+                    <default>false</default>
+                    <label>Czech Republic</label>
+                </value>
+                <value>
+                    <fullName>Denmark</fullName>
+                    <default>false</default>
+                    <label>Denmark</label>
+                </value>
+                <value>
+                    <fullName>Djibouti</fullName>
+                    <default>false</default>
+                    <label>Djibouti</label>
+                </value>
+                <value>
+                    <fullName>Dominica</fullName>
+                    <default>false</default>
+                    <label>Dominica</label>
+                </value>
+                <value>
+                    <fullName>Dominican Republic</fullName>
+                    <default>false</default>
+                    <label>Dominican Republic</label>
+                </value>
+                <value>
+                    <fullName>Ecuador</fullName>
+                    <default>false</default>
+                    <label>Ecuador</label>
+                </value>
+                <value>
+                    <fullName>Egypt</fullName>
+                    <default>false</default>
+                    <label>Egypt</label>
+                </value>
+                <value>
+                    <fullName>El Salvador</fullName>
+                    <default>false</default>
+                    <label>El Salvador</label>
+                </value>
+                <value>
+                    <fullName>Equatorial Guinea</fullName>
+                    <default>false</default>
+                    <label>Equatorial Guinea</label>
+                </value>
+                <value>
+                    <fullName>Eritrea</fullName>
+                    <default>false</default>
+                    <label>Eritrea</label>
+                </value>
+                <value>
+                    <fullName>Estonia</fullName>
+                    <default>false</default>
+                    <label>Estonia</label>
+                </value>
+                <value>
+                    <fullName>Ethiopia</fullName>
+                    <default>false</default>
+                    <label>Ethiopia</label>
+                </value>
+                <value>
+                    <fullName>Falkland Islands</fullName>
+                    <default>false</default>
+                    <label>Falkland Islands</label>
+                </value>
+                <value>
+                    <fullName>Faroe Islands</fullName>
+                    <default>false</default>
+                    <label>Faroe Islands</label>
+                </value>
+                <value>
+                    <fullName>Fiji</fullName>
+                    <default>false</default>
+                    <label>Fiji</label>
+                </value>
+                <value>
+                    <fullName>Finland</fullName>
+                    <default>false</default>
+                    <label>Finland</label>
+                </value>
+                <value>
+                    <fullName>France</fullName>
+                    <default>false</default>
+                    <label>France</label>
+                </value>
+                <value>
+                    <fullName>French Guiana</fullName>
+                    <default>false</default>
+                    <label>French Guiana</label>
+                </value>
+                <value>
+                    <fullName>French Polynesia</fullName>
+                    <default>false</default>
+                    <label>French Polynesia</label>
+                </value>
+                <value>
+                    <fullName>French Southern Territories</fullName>
+                    <default>false</default>
+                    <label>French Southern Territories</label>
+                </value>
+                <value>
+                    <fullName>Gabon</fullName>
+                    <default>false</default>
+                    <label>Gabon</label>
+                </value>
+                <value>
+                    <fullName>Gambia</fullName>
+                    <default>false</default>
+                    <label>Gambia</label>
+                </value>
+                <value>
+                    <fullName>Georgia</fullName>
+                    <default>false</default>
+                    <label>Georgia</label>
+                </value>
+                <value>
+                    <fullName>Germany</fullName>
+                    <default>false</default>
+                    <label>Germany</label>
+                </value>
+                <value>
+                    <fullName>Ghana</fullName>
+                    <default>false</default>
+                    <label>Ghana</label>
+                </value>
+                <value>
+                    <fullName>Gibraltar</fullName>
+                    <default>false</default>
+                    <label>Gibraltar</label>
+                </value>
+                <value>
+                    <fullName>Greece</fullName>
+                    <default>false</default>
+                    <label>Greece</label>
+                </value>
+                <value>
+                    <fullName>Greenland</fullName>
+                    <default>false</default>
+                    <label>Greenland</label>
+                </value>
+                <value>
+                    <fullName>Grenada</fullName>
+                    <default>false</default>
+                    <label>Grenada</label>
+                </value>
+                <value>
+                    <fullName>Guadeloupe</fullName>
+                    <default>false</default>
+                    <label>Guadeloupe</label>
+                </value>
+                <value>
+                    <fullName>Guatemala</fullName>
+                    <default>false</default>
+                    <label>Guatemala</label>
+                </value>
+                <value>
+                    <fullName>Guernsey</fullName>
+                    <default>false</default>
+                    <label>Guernsey</label>
+                </value>
+                <value>
+                    <fullName>Guinea</fullName>
+                    <default>false</default>
+                    <label>Guinea</label>
+                </value>
+                <value>
+                    <fullName>Guinea-Bissau</fullName>
+                    <default>false</default>
+                    <label>Guinea-Bissau</label>
+                </value>
+                <value>
+                    <fullName>Guyana</fullName>
+                    <default>false</default>
+                    <label>Guyana</label>
+                </value>
+                <value>
+                    <fullName>Haiti</fullName>
+                    <default>false</default>
+                    <label>Haiti</label>
+                </value>
+                <value>
+                    <fullName>Heard Island and McDonald Islands</fullName>
+                    <default>false</default>
+                    <label>Heard Island and McDonald Islands</label>
+                </value>
+                <value>
+                    <fullName>Holy See (Vatican City State)</fullName>
+                    <default>false</default>
+                    <label>Holy See (Vatican City State)</label>
+                </value>
+                <value>
+                    <fullName>Honduras</fullName>
+                    <default>false</default>
+                    <label>Honduras</label>
+                </value>
+                <value>
+                    <fullName>Hong Kong</fullName>
+                    <default>false</default>
+                    <label>Hong Kong</label>
+                </value>
+                <value>
+                    <fullName>Hungary</fullName>
+                    <default>false</default>
+                    <label>Hungary</label>
+                </value>
+                <value>
+                    <fullName>Iceland</fullName>
+                    <default>false</default>
+                    <label>Iceland</label>
+                </value>
+                <value>
+                    <fullName>India</fullName>
+                    <default>false</default>
+                    <label>India</label>
+                </value>
+                <value>
+                    <fullName>Indonesia</fullName>
+                    <default>false</default>
+                    <label>Indonesia</label>
+                </value>
+                <value>
+                    <fullName>International Graduate</fullName>
+                    <default>false</default>
+                    <label>International Graduate</label>
+                </value>
+                <value>
+                    <fullName>Iran, Islamic Republic Of</fullName>
+                    <default>false</default>
+                    <label>Iran, Islamic Republic Of</label>
+                </value>
+                <value>
+                    <fullName>Iraq</fullName>
+                    <default>false</default>
+                    <label>Iraq</label>
+                </value>
+                <value>
+                    <fullName>Ireland</fullName>
+                    <default>false</default>
+                    <label>Ireland</label>
+                </value>
+                <value>
+                    <fullName>Isle of Man</fullName>
+                    <default>false</default>
+                    <label>Isle of Man</label>
+                </value>
+                <value>
+                    <fullName>Israel</fullName>
+                    <default>false</default>
+                    <label>Israel</label>
+                </value>
+                <value>
+                    <fullName>Italy</fullName>
+                    <default>false</default>
+                    <label>Italy</label>
+                </value>
+                <value>
+                    <fullName>Jamaica</fullName>
+                    <default>false</default>
+                    <label>Jamaica</label>
+                </value>
+                <value>
+                    <fullName>Japan</fullName>
+                    <default>false</default>
+                    <label>Japan</label>
+                </value>
+                <value>
+                    <fullName>Jersey</fullName>
+                    <default>false</default>
+                    <label>Jersey</label>
+                </value>
+                <value>
+                    <fullName>Jordan</fullName>
+                    <default>false</default>
+                    <label>Jordan</label>
+                </value>
+                <value>
+                    <fullName>Kazakhstan</fullName>
+                    <default>false</default>
+                    <label>Kazakhstan</label>
+                </value>
+                <value>
+                    <fullName>Kenya</fullName>
+                    <default>false</default>
+                    <label>Kenya</label>
+                </value>
+                <value>
+                    <fullName>Kiribati</fullName>
+                    <default>false</default>
+                    <label>Kiribati</label>
+                </value>
+                <value>
+                    <fullName>Korea, Democratic Peoples Republic Of</fullName>
+                    <default>false</default>
+                    <label>Korea, Democratic Peoples Republic Of</label>
+                </value>
+                <value>
+                    <fullName>Korea, Republic Of</fullName>
+                    <default>false</default>
+                    <label>Korea, Republic Of</label>
+                </value>
+                <value>
+                    <fullName>Kuwait</fullName>
+                    <default>false</default>
+                    <label>Kuwait</label>
+                </value>
+                <value>
+                    <fullName>Kyrgyzstan</fullName>
+                    <default>false</default>
+                    <label>Kyrgyzstan</label>
+                </value>
+                <value>
+                    <fullName>Lao Peoples Democratic Republic</fullName>
+                    <default>false</default>
+                    <label>Lao Peoples Democratic Republic</label>
+                </value>
+                <value>
+                    <fullName>Latvia</fullName>
+                    <default>false</default>
+                    <label>Latvia</label>
+                </value>
+                <value>
+                    <fullName>Lebanon</fullName>
+                    <default>false</default>
+                    <label>Lebanon</label>
+                </value>
+                <value>
+                    <fullName>Lesotho</fullName>
+                    <default>false</default>
+                    <label>Lesotho</label>
+                </value>
+                <value>
+                    <fullName>Liberia</fullName>
+                    <default>false</default>
+                    <label>Liberia</label>
+                </value>
+                <value>
+                    <fullName>Libyan Arab Jamahiriya</fullName>
+                    <default>false</default>
+                    <label>Libyan Arab Jamahiriya</label>
+                </value>
+                <value>
+                    <fullName>Liechtenstein</fullName>
+                    <default>false</default>
+                    <label>Liechtenstein</label>
+                </value>
+                <value>
+                    <fullName>Lithuania</fullName>
+                    <default>false</default>
+                    <label>Lithuania</label>
+                </value>
+                <value>
+                    <fullName>Luxembourg</fullName>
+                    <default>false</default>
+                    <label>Luxembourg</label>
+                </value>
+                <value>
+                    <fullName>Macao</fullName>
+                    <default>false</default>
+                    <label>Macao</label>
+                </value>
+                <value>
+                    <fullName>Macedonia, The Former Yugoslav Republic Of</fullName>
+                    <default>false</default>
+                    <label>Macedonia, The Former Yugoslav Republic Of</label>
+                </value>
+                <value>
+                    <fullName>Madagascar</fullName>
+                    <default>false</default>
+                    <label>Madagascar</label>
+                </value>
+                <value>
+                    <fullName>Malawi</fullName>
+                    <default>false</default>
+                    <label>Malawi</label>
+                </value>
+                <value>
+                    <fullName>Malaysia</fullName>
+                    <default>false</default>
+                    <label>Malaysia</label>
+                </value>
+                <value>
+                    <fullName>Maldives</fullName>
+                    <default>false</default>
+                    <label>Maldives</label>
+                </value>
+                <value>
+                    <fullName>Mali</fullName>
+                    <default>false</default>
+                    <label>Mali</label>
+                </value>
+                <value>
+                    <fullName>Malta</fullName>
+                    <default>false</default>
+                    <label>Malta</label>
+                </value>
+                <value>
+                    <fullName>Marshall Islands</fullName>
+                    <default>false</default>
+                    <label>Marshall Islands</label>
+                </value>
+                <value>
+                    <fullName>Martinique</fullName>
+                    <default>false</default>
+                    <label>Martinique</label>
+                </value>
+                <value>
+                    <fullName>Mauritania</fullName>
+                    <default>false</default>
+                    <label>Mauritania</label>
+                </value>
+                <value>
+                    <fullName>Mauritius</fullName>
+                    <default>false</default>
+                    <label>Mauritius</label>
+                </value>
+                <value>
+                    <fullName>Mayotte</fullName>
+                    <default>false</default>
+                    <label>Mayotte</label>
+                </value>
+                <value>
+                    <fullName>Mexico</fullName>
+                    <default>false</default>
+                    <label>Mexico</label>
+                </value>
+                <value>
+                    <fullName>Micronesia, Federated States Of</fullName>
+                    <default>false</default>
+                    <label>Micronesia, Federated States Of</label>
+                </value>
+                <value>
+                    <fullName>Moldova, Republic Of</fullName>
+                    <default>false</default>
+                    <label>Moldova, Republic Of</label>
+                </value>
+                <value>
+                    <fullName>Monaco</fullName>
+                    <default>false</default>
+                    <label>Monaco</label>
+                </value>
+                <value>
+                    <fullName>Mongolia</fullName>
+                    <default>false</default>
+                    <label>Mongolia</label>
+                </value>
+                <value>
+                    <fullName>Montenegro</fullName>
+                    <default>false</default>
+                    <label>Montenegro</label>
+                </value>
+                <value>
+                    <fullName>Montserrat</fullName>
+                    <default>false</default>
+                    <label>Montserrat</label>
+                </value>
+                <value>
+                    <fullName>Morocco</fullName>
+                    <default>false</default>
+                    <label>Morocco</label>
+                </value>
+                <value>
+                    <fullName>Mozambique</fullName>
+                    <default>false</default>
+                    <label>Mozambique</label>
+                </value>
+                <value>
+                    <fullName>Myanmar</fullName>
+                    <default>false</default>
+                    <label>Myanmar</label>
+                </value>
+                <value>
+                    <fullName>Namibia</fullName>
+                    <default>false</default>
+                    <label>Namibia</label>
+                </value>
+                <value>
+                    <fullName>Nauru</fullName>
+                    <default>false</default>
+                    <label>Nauru</label>
+                </value>
+                <value>
+                    <fullName>Nepal</fullName>
+                    <default>false</default>
+                    <label>Nepal</label>
+                </value>
+                <value>
+                    <fullName>Netherlands</fullName>
+                    <default>false</default>
+                    <label>Netherlands</label>
+                </value>
+                <value>
+                    <fullName>New Caledonia</fullName>
+                    <default>false</default>
+                    <label>New Caledonia</label>
+                </value>
+                <value>
+                    <fullName>New Zealand</fullName>
+                    <default>false</default>
+                    <label>New Zealand</label>
+                </value>
+                <value>
+                    <fullName>Nicaragua</fullName>
+                    <default>false</default>
+                    <label>Nicaragua</label>
+                </value>
+                <value>
+                    <fullName>Niger</fullName>
+                    <default>false</default>
+                    <label>Niger</label>
+                </value>
+                <value>
+                    <fullName>Nigeria</fullName>
+                    <default>false</default>
+                    <label>Nigeria</label>
+                </value>
+                <value>
+                    <fullName>Niue</fullName>
+                    <default>false</default>
+                    <label>Niue</label>
+                </value>
+                <value>
+                    <fullName>Norfolk Island</fullName>
+                    <default>false</default>
+                    <label>Norfolk Island</label>
+                </value>
+                <value>
+                    <fullName>Norway</fullName>
+                    <default>false</default>
+                    <label>Norway</label>
+                </value>
+                <value>
+                    <fullName>Oman</fullName>
+                    <default>false</default>
+                    <label>Oman</label>
+                </value>
+                <value>
+                    <fullName>Pakistan</fullName>
+                    <default>false</default>
+                    <label>Pakistan</label>
+                </value>
+                <value>
+                    <fullName>Palau</fullName>
+                    <default>false</default>
+                    <label>Palau</label>
+                </value>
+                <value>
+                    <fullName>Palestinian Territory, Occupied</fullName>
+                    <default>false</default>
+                    <label>Palestinian Territory, Occupied</label>
+                </value>
+                <value>
+                    <fullName>Panama</fullName>
+                    <default>false</default>
+                    <label>Panama</label>
+                </value>
+                <value>
+                    <fullName>Papua New Guinea</fullName>
+                    <default>false</default>
+                    <label>Papua New Guinea</label>
+                </value>
+                <value>
+                    <fullName>Paraguay</fullName>
+                    <default>false</default>
+                    <label>Paraguay</label>
+                </value>
+                <value>
+                    <fullName>Peru</fullName>
+                    <default>false</default>
+                    <label>Peru</label>
+                </value>
+                <value>
+                    <fullName>Philippines</fullName>
+                    <default>false</default>
+                    <label>Philippines</label>
+                </value>
+                <value>
+                    <fullName>Pitcairn</fullName>
+                    <default>false</default>
+                    <label>Pitcairn</label>
+                </value>
+                <value>
+                    <fullName>Poland</fullName>
+                    <default>false</default>
+                    <label>Poland</label>
+                </value>
+                <value>
+                    <fullName>Portugal</fullName>
+                    <default>false</default>
+                    <label>Portugal</label>
+                </value>
+                <value>
+                    <fullName>Qatar</fullName>
+                    <default>false</default>
+                    <label>Qatar</label>
+                </value>
+                <value>
+                    <fullName>Reunion</fullName>
+                    <default>false</default>
+                    <label>Reunion</label>
+                </value>
+                <value>
+                    <fullName>Romania</fullName>
+                    <default>false</default>
+                    <label>Romania</label>
+                </value>
+                <value>
+                    <fullName>Russian Federation</fullName>
+                    <default>false</default>
+                    <label>Russian Federation</label>
+                </value>
+                <value>
+                    <fullName>Rwanda</fullName>
+                    <default>false</default>
+                    <label>Rwanda</label>
+                </value>
+                <value>
+                    <fullName>Saint Barthelemy</fullName>
+                    <default>false</default>
+                    <label>Saint Barthelemy</label>
+                </value>
+                <value>
+                    <fullName>Saint Helena</fullName>
+                    <default>false</default>
+                    <label>Saint Helena</label>
+                </value>
+                <value>
+                    <fullName>Saint Kitts and Nevis</fullName>
+                    <default>false</default>
+                    <label>Saint Kitts and Nevis</label>
+                </value>
+                <value>
+                    <fullName>Saint Lucia</fullName>
+                    <default>false</default>
+                    <label>Saint Lucia</label>
+                </value>
+                <value>
+                    <fullName>Saint Martin (French)</fullName>
+                    <default>false</default>
+                    <label>Saint Martin (French)</label>
+                </value>
+                <value>
+                    <fullName>Saint Pierre and Miquelon</fullName>
+                    <default>false</default>
+                    <label>Saint Pierre and Miquelon</label>
+                </value>
+                <value>
+                    <fullName>Saint Vincent and the Grenadines</fullName>
+                    <default>false</default>
+                    <label>Saint Vincent and the Grenadines</label>
+                </value>
+                <value>
+                    <fullName>Samoa</fullName>
+                    <default>false</default>
+                    <label>Samoa</label>
+                </value>
+                <value>
+                    <fullName>San Marino</fullName>
+                    <default>false</default>
+                    <label>San Marino</label>
+                </value>
+                <value>
+                    <fullName>Sao Tome and Principe</fullName>
+                    <default>false</default>
+                    <label>Sao Tome and Principe</label>
+                </value>
+                <value>
+                    <fullName>Saudi Arabia</fullName>
+                    <default>false</default>
+                    <label>Saudi Arabia</label>
+                </value>
+                <value>
+                    <fullName>Senegal</fullName>
+                    <default>false</default>
+                    <label>Senegal</label>
+                </value>
+                <value>
+                    <fullName>Serbia</fullName>
+                    <default>false</default>
+                    <label>Serbia</label>
+                </value>
+                <value>
+                    <fullName>Seychelles</fullName>
+                    <default>false</default>
+                    <label>Seychelles</label>
+                </value>
+                <value>
+                    <fullName>Sierra Leone</fullName>
+                    <default>false</default>
+                    <label>Sierra Leone</label>
+                </value>
+                <value>
+                    <fullName>Singapore</fullName>
+                    <default>false</default>
+                    <label>Singapore</label>
+                </value>
+                <value>
+                    <fullName>Sint Maartin (Dutch)</fullName>
+                    <default>false</default>
+                    <label>Sint Maartin (Dutch)</label>
+                </value>
+                <value>
+                    <fullName>Slovakia</fullName>
+                    <default>false</default>
+                    <label>Slovakia</label>
+                </value>
+                <value>
+                    <fullName>Slovenia</fullName>
+                    <default>false</default>
+                    <label>Slovenia</label>
+                </value>
+                <value>
+                    <fullName>Solomon Islands</fullName>
+                    <default>false</default>
+                    <label>Solomon Islands</label>
+                </value>
+                <value>
+                    <fullName>Somalia</fullName>
+                    <default>false</default>
+                    <label>Somalia</label>
+                </value>
+                <value>
+                    <fullName>South Africa</fullName>
+                    <default>false</default>
+                    <label>South Africa</label>
+                </value>
+                <value>
+                    <fullName>South Georgia and the South Sandwich Islands</fullName>
+                    <default>false</default>
+                    <label>South Georgia and the South Sandwich Islands</label>
+                </value>
+                <value>
+                    <fullName>South Sudan</fullName>
+                    <default>false</default>
+                    <label>South Sudan</label>
+                </value>
+                <value>
+                    <fullName>Spain</fullName>
+                    <default>false</default>
+                    <label>Spain</label>
+                </value>
+                <value>
+                    <fullName>Spring</fullName>
+                    <default>false</default>
+                    <label>Spring</label>
+                </value>
+                <value>
+                    <fullName>Sri Lanka</fullName>
+                    <default>false</default>
+                    <label>Sri Lanka</label>
+                </value>
+                <value>
+                    <fullName>Sudan</fullName>
+                    <default>false</default>
+                    <label>Sudan</label>
+                </value>
+                <value>
+                    <fullName>Suriname</fullName>
+                    <default>false</default>
+                    <label>Suriname</label>
+                </value>
+                <value>
+                    <fullName>Svalbard and Jan Mayen</fullName>
+                    <default>false</default>
+                    <label>Svalbard and Jan Mayen</label>
+                </value>
+                <value>
+                    <fullName>Swaziland</fullName>
+                    <default>false</default>
+                    <label>Swaziland</label>
+                </value>
+                <value>
+                    <fullName>Sweden</fullName>
+                    <default>false</default>
+                    <label>Sweden</label>
+                </value>
+                <value>
+                    <fullName>Switzerland</fullName>
+                    <default>false</default>
+                    <label>Switzerland</label>
+                </value>
+                <value>
+                    <fullName>Syrian Arab Republic</fullName>
+                    <default>false</default>
+                    <label>Syrian Arab Republic</label>
+                </value>
+                <value>
+                    <fullName>Taiwan, Province of China</fullName>
+                    <default>false</default>
+                    <label>Taiwan, Province of China</label>
+                </value>
+                <value>
+                    <fullName>Tajikistan</fullName>
+                    <default>false</default>
+                    <label>Tajikistan</label>
+                </value>
+                <value>
+                    <fullName>Tanzania, United Republic Of</fullName>
+                    <default>false</default>
+                    <label>Tanzania, United Republic Of</label>
+                </value>
+                <value>
+                    <fullName>Thailand</fullName>
+                    <default>false</default>
+                    <label>Thailand</label>
+                </value>
+                <value>
+                    <fullName>Timor-Leste</fullName>
+                    <default>false</default>
+                    <label>Timor-Leste</label>
+                </value>
+                <value>
+                    <fullName>Togo</fullName>
+                    <default>false</default>
+                    <label>Togo</label>
+                </value>
+                <value>
+                    <fullName>Tokelau</fullName>
+                    <default>false</default>
+                    <label>Tokelau</label>
+                </value>
+                <value>
+                    <fullName>Tonga</fullName>
+                    <default>false</default>
+                    <label>Tonga</label>
+                </value>
+                <value>
+                    <fullName>Trinidad and Tobago</fullName>
+                    <default>false</default>
+                    <label>Trinidad and Tobago</label>
+                </value>
+                <value>
+                    <fullName>Tunisia</fullName>
+                    <default>false</default>
+                    <label>Tunisia</label>
+                </value>
+                <value>
+                    <fullName>Turkey</fullName>
+                    <default>false</default>
+                    <label>Turkey</label>
+                </value>
+                <value>
+                    <fullName>Turkmenistan</fullName>
+                    <default>false</default>
+                    <label>Turkmenistan</label>
+                </value>
+                <value>
+                    <fullName>Turks and Caicos Islands</fullName>
+                    <default>false</default>
+                    <label>Turks and Caicos Islands</label>
+                </value>
+                <value>
+                    <fullName>Tuvalu</fullName>
+                    <default>false</default>
+                    <label>Tuvalu</label>
+                </value>
+                <value>
+                    <fullName>Uganda</fullName>
+                    <default>false</default>
+                    <label>Uganda</label>
+                </value>
+                <value>
+                    <fullName>Ukraine</fullName>
+                    <default>false</default>
+                    <label>Ukraine</label>
+                </value>
+                <value>
+                    <fullName>United Arab Emirates</fullName>
+                    <default>false</default>
+                    <label>United Arab Emirates</label>
+                </value>
+                <value>
+                    <fullName>United Kingdom</fullName>
+                    <default>false</default>
+                    <label>United Kingdom</label>
+                </value>
+                <value>
+                    <fullName>Uruguay</fullName>
+                    <default>false</default>
+                    <label>Uruguay</label>
+                </value>
+                <value>
+                    <fullName>Uzbekistan</fullName>
+                    <default>false</default>
+                    <label>Uzbekistan</label>
+                </value>
+                <value>
+                    <fullName>Vanuatu</fullName>
+                    <default>false</default>
+                    <label>Vanuatu</label>
+                </value>
+                <value>
+                    <fullName>Venezuela</fullName>
+                    <default>false</default>
+                    <label>Venezuela</label>
+                </value>
+                <value>
+                    <fullName>Viet Nam</fullName>
+                    <default>false</default>
+                    <label>Viet Nam</label>
+                </value>
+                <value>
+                    <fullName>Virgin Islands, British</fullName>
+                    <default>false</default>
+                    <label>Virgin Islands, British</label>
+                </value>
+                <value>
+                    <fullName>Wallis and Futuna</fullName>
+                    <default>false</default>
+                    <label>Wallis and Futuna</label>
+                </value>
+                <value>
+                    <fullName>Western Sahara</fullName>
+                    <default>false</default>
+                    <label>Western Sahara</label>
+                </value>
+                <value>
+                    <fullName>Yemen</fullName>
+                    <default>false</default>
+                    <label>Yemen</label>
+                </value>
+                <value>
+                    <fullName>Zambia</fullName>
+                    <default>false</default>
+                    <label>Zambia</label>
+                </value>
+                <value>
+                    <fullName>Zimbabwe</fullName>
+                    <default>false</default>
+                    <label>Zimbabwe</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cultural_Attitude__c</fullName>
+        <externalId>false</externalId>
+        <label>zzCultural Attitude</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cumulative_GPA__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>Cumulative GPA</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Immigration_Visa_Status__c</fullName>
+        <description>Applicants visa type</description>
+        <externalId>false</externalId>
+        <label>Current Immigration Visa Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Exchange Visitor (J-1)</fullName>
+                    <default>false</default>
+                    <label>Exchange Visitor (J-1)</label>
+                </value>
+                <value>
+                    <fullName>Exchange Visitor Dependent (J-2)</fullName>
+                    <default>false</default>
+                    <label>Exchange Visitor Dependent (J-2)</label>
+                </value>
+                <value>
+                    <fullName>Fiance (K)</fullName>
+                    <default>false</default>
+                    <label>Fiance (K)</label>
+                </value>
+                <value>
+                    <fullName>Foreign Business (L)</fullName>
+                    <default>false</default>
+                    <label>Foreign Business (L)</label>
+                </value>
+                <value>
+                    <fullName>Permanent Resident (Green Card)</fullName>
+                    <default>false</default>
+                    <label>Permanent Resident (Green Card)</label>
+                </value>
+                <value>
+                    <fullName>Religious Work (R)</fullName>
+                    <default>false</default>
+                    <label>Religious Work (R)</label>
+                </value>
+                <value>
+                    <fullName>Student (F-1)</fullName>
+                    <default>false</default>
+                    <label>Student (F-1)</label>
+                </value>
+                <value>
+                    <fullName>Student Dependent (F-2)</fullName>
+                    <default>false</default>
+                    <label>Student Dependent (F-2)</label>
+                </value>
+                <value>
+                    <fullName>Visitor (B)</fullName>
+                    <default>false</default>
+                    <label>Visitor (B)</label>
+                </value>
+                <value>
+                    <fullName>Work (H)</fullName>
+                    <default>false</default>
+                    <label>Work (H)</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Currently_Employed__c</fullName>
+        <description>Custom field to store response from application</description>
+        <externalId>false</externalId>
+        <label>Currently Employed?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Currently_Enrolled__c</fullName>
+        <description>Custom field from application</description>
+        <externalId>false</externalId>
+        <label>Currently Enrolled?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Date_Completed__c</fullName>
+        <description>From guidance counselor</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Guidance counselor school report date</inlineHelpText>
+        <label>zzDate Completed</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Degree_Type__c</fullName>
@@ -287,7 +2161,12 @@
         <valueSet>
             <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>false</sorted>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Blended</fullName>
+                    <default>false</default>
+                    <label>Blended</label>
+                </value>
                 <value>
                     <fullName>On-Campus</fullName>
                     <default>false</default>
@@ -299,9 +2178,9 @@
                     <label>Online</label>
                 </value>
                 <value>
-                    <fullName>Blended</fullName>
+                    <fullName>ONU</fullName>
                     <default>false</default>
-                    <label>Blended</label>
+                    <label>ONU</label>
                 </value>
                 <value>
                     <fullName>Scott Air force Base</fullName>
@@ -325,6 +2204,134 @@
             <restricted>true</restricted>
             <valueSetName>Delivery_Types</valueSetName>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Denomination__c</fullName>
+        <description>For EASY application</description>
+        <externalId>false</externalId>
+        <label>Denomination</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disability_Comments__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>Disability Comments</label>
+        <length>2500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Disability__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>Disability</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ERP_Application_Status__c</fullName>
+        <description>To be used for integration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From SIS integration</inlineHelpText>
+        <label>ERP Application Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_Decision_Codes__c</fullName>
+        <description>To be used for integration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From SIS integration</inlineHelpText>
+        <label>ERP Decision Codes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_Delivery_Location__c</fullName>
+        <description>To be used for integration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From SIS integration</inlineHelpText>
+        <label>ERP Delivery Location</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_Lead_Source__c</fullName>
+        <description>To be used for integration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From SIS integration</inlineHelpText>
+        <label>ERP Lead Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_Residency__c</fullName>
+        <description>To be used for integration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From SIS integration</inlineHelpText>
+        <label>ERP Residency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_Withdrawal_Reason__c</fullName>
+        <description>To be used for integration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From SIS integration</inlineHelpText>
+        <label>ERP Withdrawal Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Early_Decision__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Early decision agreement</inlineHelpText>
+        <label>zzEarly Decision</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Educational_Background__c</fullName>
@@ -362,11 +2369,481 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Emergency_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>zzEmergency Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Emergency_Contact_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>zzEmergency Contact First Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Emergency_Contact_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>zzEmergency Contact Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Emergency_Contact_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>zzEmergency Contact Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Emergency_Contact_Relationship__c</fullName>
+        <externalId>false</externalId>
+        <label>zzEmergency Contact Relationship</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Friend</fullName>
+                    <default>false</default>
+                    <label>Friend</label>
+                </value>
+                <value>
+                    <fullName>Family</fullName>
+                    <default>false</default>
+                    <label>Family</label>
+                </value>
+                <value>
+                    <fullName>Coworker</fullName>
+                    <default>false</default>
+                    <label>Coworker</label>
+                </value>
+                <value>
+                    <fullName>Father</fullName>
+                    <default>false</default>
+                    <label>Father</label>
+                </value>
+                <value>
+                    <fullName>Mother</fullName>
+                    <default>false</default>
+                    <label>Mother</label>
+                </value>
+                <value>
+                    <fullName>Parent</fullName>
+                    <default>false</default>
+                    <label>Parent</label>
+                </value>
+                <value>
+                    <fullName>Son</fullName>
+                    <default>false</default>
+                    <label>Son</label>
+                </value>
+                <value>
+                    <fullName>Daughter</fullName>
+                    <default>false</default>
+                    <label>Daughter</label>
+                </value>
+                <value>
+                    <fullName>Child</fullName>
+                    <default>false</default>
+                    <label>Child</label>
+                </value>
+                <value>
+                    <fullName>Aunt</fullName>
+                    <default>false</default>
+                    <label>Aunt</label>
+                </value>
+                <value>
+                    <fullName>Uncle</fullName>
+                    <default>false</default>
+                    <label>Uncle</label>
+                </value>
+                <value>
+                    <fullName>Husband</fullName>
+                    <default>false</default>
+                    <label>Husband</label>
+                </value>
+                <value>
+                    <fullName>Wife</fullName>
+                    <default>false</default>
+                    <label>Wife</label>
+                </value>
+                <value>
+                    <fullName>Partner</fullName>
+                    <default>false</default>
+                    <label>Partner</label>
+                </value>
+                <value>
+                    <fullName>Cousin</fullName>
+                    <default>false</default>
+                    <label>Cousin</label>
+                </value>
+                <value>
+                    <fullName>Grandmother</fullName>
+                    <default>false</default>
+                    <label>Grandmother</label>
+                </value>
+                <value>
+                    <fullName>Grandfather</fullName>
+                    <default>false</default>
+                    <label>Grandfather</label>
+                </value>
+                <value>
+                    <fullName>Grandparent</fullName>
+                    <default>false</default>
+                    <label>Grandparent</label>
+                </value>
+                <value>
+                    <fullName>Grandson</fullName>
+                    <default>false</default>
+                    <label>Grandson</label>
+                </value>
+                <value>
+                    <fullName>Granddaughter</fullName>
+                    <default>false</default>
+                    <label>Granddaughter</label>
+                </value>
+                <value>
+                    <fullName>Grandchild</fullName>
+                    <default>false</default>
+                    <label>Grandchild</label>
+                </value>
+                <value>
+                    <fullName>Employer</fullName>
+                    <default>false</default>
+                    <label>Employer</label>
+                </value>
+                <value>
+                    <fullName>Employee</fullName>
+                    <default>false</default>
+                    <label>Employee</label>
+                </value>
+                <value>
+                    <fullName>Advisor</fullName>
+                    <default>false</default>
+                    <label>Advisor</label>
+                </value>
+                <value>
+                    <fullName>Advisee</fullName>
+                    <default>false</default>
+                    <label>Advisee</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Emergency_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>zzEmergency Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Applications (Emergency Contact)</relationshipLabel>
+        <relationshipName>Applications1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Engagement__c</fullName>
+        <externalId>false</externalId>
+        <label>zzEngagement</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>English_Proficiency_Test__c</fullName>
+        <externalId>false</externalId>
+        <label>English Proficiency Test</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>TOEFL</fullName>
+                    <default>false</default>
+                    <label>TOEFL</label>
+                </value>
+                <value>
+                    <fullName>IELTS</fullName>
+                    <default>false</default>
+                    <label>IELTS</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Entry_Term__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Entry Term</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Ethos__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Academic Periods</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Ethos__c</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Exam_Taken_English_Proficiency__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What English proficiency exam did you take?</inlineHelpText>
+        <label>Exam Taken-English Proficiency</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>TOEFL</fullName>
+                    <default>false</default>
+                    <label>TOEFL</label>
+                </value>
+                <value>
+                    <fullName>IELTS</fullName>
+                    <default>false</default>
+                    <label>IELTS</label>
+                </value>
+                <value>
+                    <fullName>Both TOEFL and IELTS</fullName>
+                    <default>false</default>
+                    <label>Both TOEFL and IELTS</label>
+                </value>
+                <value>
+                    <fullName>I haven&apos;t yet taken an English proficiency exam</fullName>
+                    <default>false</default>
+                    <label>I haven&apos;t yet taken an English proficiency exam</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Exam_Taken_Freshman__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What entrance exam did you take?</inlineHelpText>
+        <label>zzExam Taken-Freshman</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ACT</fullName>
+                    <default>false</default>
+                    <label>ACT</label>
+                </value>
+                <value>
+                    <fullName>SAT</fullName>
+                    <default>false</default>
+                    <label>SAT</label>
+                </value>
+                <value>
+                    <fullName>Both ACT and SAT</fullName>
+                    <default>false</default>
+                    <label>Both ACT and SAT</label>
+                </value>
+                <value>
+                    <fullName>I haven&apos;t yet taken an entrance exam</fullName>
+                    <default>false</default>
+                    <label>I haven&apos;t yet taken an entrance exam</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Exam_Taken_Grad__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What entrance exam did you take?</inlineHelpText>
+        <label>zzExam Taken-Grad</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>GRE</fullName>
+                    <default>false</default>
+                    <label>GRE</label>
+                </value>
+                <value>
+                    <fullName>GMAT</fullName>
+                    <default>false</default>
+                    <label>GMAT</label>
+                </value>
+                <value>
+                    <fullName>Both GRE and GMAT</fullName>
+                    <default>false</default>
+                    <label>Both GRE and GMAT</label>
+                </value>
+                <value>
+                    <fullName>I haven&apos;t yet taken an entrance exam</fullName>
+                    <default>false</default>
+                    <label>I haven&apos;t yet taken an entrance exam</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>External_GUID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Contains the external guid for Recruit, Colleague or other external sources</description>
+        <externalId>true</externalId>
+        <label>External GUID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>External_Reference_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Auto generated reference ID from ellucian</description>
+        <externalId>true</externalId>
+        <label>External Reference ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Fee_Waiver__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>zzFee Waiver</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Former_Name__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzFormer Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GMAT_Score__c</fullName>
+        <description>EASY Application</description>
+        <externalId>false</externalId>
+        <label>GMAT Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GPA_Major__c</fullName>
+        <description>For EASY</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use only numbers, no letters</inlineHelpText>
+        <label>GPA-Major</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GPA_Weighting__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>GPA Weighting</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GRE_Score__c</fullName>
+        <description>EASY Application</description>
+        <externalId>false</externalId>
+        <label>GRE Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Generic_Filter_1__c</fullName>
         <description>A generic filter included in EASY that can be re-purposed for an individual institutions&apos; needs.</description>
         <externalId>false</externalId>
         <inlineHelpText>A generic filter included in EASY that can be re-purposed for an individual institutions&apos; needs.</inlineHelpText>
-        <label>Generic Filter 1</label>
+        <label>Start Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
@@ -422,10 +2899,499 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Grading_Scale__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>Grading Scale</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Graduation_Date__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>Graduation Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Growth__c</fullName>
+        <externalId>false</externalId>
+        <label>zzGrowth</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian1_Address2__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 Address2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian1_Address_Same__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Parent/Guardian 1&apos;s Address is the same as the Applicant&apos;s</inlineHelpText>
+        <label>zzGuardian1 Address Same</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Guardian1_Address__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian1_City__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian1_Country__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian1_Email__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian1_First_Name__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian1_Last_Name__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian1_Phone_Type__c</fullName>
+        <description>From Easy Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 Phone Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cell</fullName>
+                    <default>false</default>
+                    <label>Cell</label>
+                </value>
+                <value>
+                    <fullName>Home</fullName>
+                    <default>false</default>
+                    <label>Home</label>
+                </value>
+                <value>
+                    <fullName>Work</fullName>
+                    <default>false</default>
+                    <label>Work</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Guardian1_Phone__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Guardian1_Postal_Code__c</fullName>
+        <description>From EASY Applilcation</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 Postal Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian1_Relationship__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 Relationship</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Relationship_Values</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Guardian1_State__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian1 State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian2_Address2__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 Address2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian2_Address_Same__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Guardian 2&apos;s address is same as Applicant&apos;s address</inlineHelpText>
+        <label>zzGuardian2 Address Same</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Guardian2_Address__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian2_City__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian2_Country__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian2_Email__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian2_First_Name__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian2_Last_Name__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian2_Phone_Type__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 Phone Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cell</fullName>
+                    <default>false</default>
+                    <label>Cell</label>
+                </value>
+                <value>
+                    <fullName>Home</fullName>
+                    <default>false</default>
+                    <label>Home</label>
+                </value>
+                <value>
+                    <fullName>Work</fullName>
+                    <default>false</default>
+                    <label>Work</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Guardian2_Phone__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Guardian2_Postal_Code__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 Postal Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guardian2_Relationship__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 Relationship</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Relationship_Values</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Guardian2_State__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuardian2 State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guidance_Counselor_Email__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuidance Counselor Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guidance_Counselor_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>zzGuidance Counselor First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guidance_Counselor_Last_Name__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuidance Counselor Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guidance_Counselor_Title__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzGuidance Counselor Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Holding_Name__c</fullName>
         <description>For test class purposes only</description>
         <externalId>false</externalId>
         <label>Holding Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Housing_Preference__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzHousing Preference</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Residence Hall Room - One bed (no roommate)</fullName>
+                    <default>false</default>
+                    <label>Residence Hall Room - One bed (no roommate)</label>
+                </value>
+                <value>
+                    <fullName>Residence Hall Room - Two beds (one roommate)</fullName>
+                    <default>false</default>
+                    <label>Residence Hall Room - Two beds (one roommate)</label>
+                </value>
+                <value>
+                    <fullName>Residence Hall Suite - Four beds (three roommates)</fullName>
+                    <default>false</default>
+                    <label>Residence Hall Suite - Four beds (three roommates)</label>
+                </value>
+                <value>
+                    <fullName>Apartment - One bedroom</fullName>
+                    <default>false</default>
+                    <label>Apartment - One bedroom</label>
+                </value>
+                <value>
+                    <fullName>Apartment - Two bedrooms</fullName>
+                    <default>false</default>
+                    <label>Apartment - Two bedrooms</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Incoming_Major__c</fullName>
+        <description>The major earned prior to entering SGCS</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Major earned prior to entering SGCS</inlineHelpText>
+        <label>Incoming Major</label>
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -460,6 +3426,601 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Interpersonal_Skills__c</fullName>
+        <description>For EASY workshop exercises</description>
+        <externalId>false</externalId>
+        <label>zzInterpersonal Skills</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Language_of_Instruction__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Primary language of instruction</inlineHelpText>
+        <label>zzLanguage of Instruction</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Law_Violation__c</fullName>
+        <externalId>false</externalId>
+        <label>Law Violation</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lead_Source__c</fullName>
+        <description>Custom field to track response to application question: What prompted you to inquire today?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From response to application question</inlineHelpText>
+        <label>Lead Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Admissions_Lead_Source</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Leadership_Ability__c</fullName>
+        <externalId>false</externalId>
+        <label>zzLeadership Ability</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Leadership_Experience__c</fullName>
+        <externalId>false</externalId>
+        <label>zzLeadership Experience</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_On_Campus__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Answer to question: Will you be staying in Student Residence?*</inlineHelpText>
+        <label>zzLive On Campus?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Maturity_Level__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>zzMaturity Level</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Middle_Name__c</fullName>
+        <description>Custom field for applicant&apos;s response in Application</description>
+        <externalId>false</externalId>
+        <label>zzMiddle Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Migration_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Migration Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Colleague</fullName>
+                    <default>false</default>
+                    <label>Colleague</label>
+                </value>
+                <value>
+                    <fullName>Recruit</fullName>
+                    <default>false</default>
+                    <label>Recruit</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Military_Service__c</fullName>
+        <externalId>false</externalId>
+        <label>Military Service</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Official_English_Proficiency_Score__c</fullName>
+        <description>Official score from score report</description>
+        <externalId>false</externalId>
+        <label>Official English Proficiency Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Official_Final_GPA__c</fullName>
+        <description>From Official Final Transcript</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From Official Final Transcript</inlineHelpText>
+        <label>Official Final GPA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Official_In_Progress_GPA__c</fullName>
+        <description>From Official In-Progress Transcript</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From Official In-Progress Transcript</inlineHelpText>
+        <label>Official In-Progress GPA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opted_to_Attend__c</fullName>
+        <description>Withdrawn application response to the institution they opted to attend</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Institution they attended instead of ONU</inlineHelpText>
+        <label>Opted to Attend</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OriginalApplication__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Contains a reference to SOURCE application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains a reference to SOURCE application</inlineHelpText>
+        <label>Original Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>HistoryApplications</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Other_Lead_Source__c</fullName>
+        <description>Custom field to hold the response to the question: If you selected &quot;Other,&quot; please specify.</description>
+        <externalId>false</externalId>
+        <label>Other Lead Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Education__c</fullName>
+        <externalId>false</externalId>
+        <label>zzParent Education</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Preferred_Name__c</fullName>
+        <description>To map from CCCB application</description>
+        <externalId>false</externalId>
+        <label>Preferred Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prefix__c</fullName>
+        <description>Custom field to store Applicant&apos;s prefix</description>
+        <externalId>false</externalId>
+        <label>Prefix</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Chaplain</fullName>
+                    <default>false</default>
+                    <label>Chaplain</label>
+                </value>
+                <value>
+                    <fullName>Dr.</fullName>
+                    <default>false</default>
+                    <label>Dr.</label>
+                </value>
+                <value>
+                    <fullName>Miss</fullName>
+                    <default>false</default>
+                    <label>Miss</label>
+                </value>
+                <value>
+                    <fullName>Mr.</fullName>
+                    <default>false</default>
+                    <label>Mr.</label>
+                </value>
+                <value>
+                    <fullName>Mrs.</fullName>
+                    <default>false</default>
+                    <label>Mrs.</label>
+                </value>
+                <value>
+                    <fullName>Ms.</fullName>
+                    <default>false</default>
+                    <label>Ms.</label>
+                </value>
+                <value>
+                    <fullName>Pastor</fullName>
+                    <default>false</default>
+                    <label>Pastor</label>
+                </value>
+                <value>
+                    <fullName>Rev.</fullName>
+                    <default>false</default>
+                    <label>Rev.</label>
+                </value>
+                <value>
+                    <fullName>Sr.</fullName>
+                    <default>false</default>
+                    <label>Sr.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Prior_College_Attendance__c</fullName>
+        <description>Indicates applicant previously attended another college for credit</description>
+        <externalId>false</externalId>
+        <label>zzPrior College Attendance</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Privacy_Opt_In__c</fullName>
+        <description>Documents the Contact has opted into receiving communications from Olivet.</description>
+        <externalId>false</externalId>
+        <label>Privacy Opt In</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_Picklist</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Professional_Success__c</fullName>
+        <externalId>false</externalId>
+        <label>zzProfessional Success</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ROTC__c</fullName>
+        <externalId>false</externalId>
+        <label>zzROTC</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Readiness__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>zzReadiness</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Recruit_Decision_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Recruit Decision Plan</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Start at Beginning of Term</fullName>
+                    <default>false</default>
+                    <label>Start at Beginning of Term</label>
+                </value>
+                <value>
+                    <fullName>Start at Middle of Term</fullName>
+                    <default>false</default>
+                    <label>Start at Middle of Term</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Recruit_Denied_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Recruit Denied Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Recruit_GUID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Recruit GUID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Recruit_Signature__c</fullName>
+        <externalId>false</externalId>
+        <label>Recruit Signature</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Recruit_Status_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Recruit Status Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reference_Connection__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How do you know this applicant?</inlineHelpText>
+        <label>Reference Connection</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reference_Email__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>Reference Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reference_First_Name__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>Reference First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reference_Last_Name__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>Reference Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reference_Recommendation__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From Reference</inlineHelpText>
+        <label>Reference Recommendation</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Highly Recommend</fullName>
+                    <default>false</default>
+                    <label>Highly Recommend</label>
+                </value>
+                <value>
+                    <fullName>Recommend</fullName>
+                    <default>false</default>
+                    <label>Recommend</label>
+                </value>
+                <value>
+                    <fullName>Hesitantly Recommend</fullName>
+                    <default>false</default>
+                    <label>Hesitantly Recommend</label>
+                </value>
+                <value>
+                    <fullName>Do Not Recommend</fullName>
+                    <default>false</default>
+                    <label>Do Not Recommend</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Related_Object_JSON__c</fullName>
         <description>For test class use only</description>
         <externalId>false</externalId>
@@ -469,6 +4030,332 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Religious_Affiliation__c</fullName>
+        <description>Custom field from application</description>
+        <externalId>false</externalId>
+        <label>Religious Affiliation</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A.M.E.</fullName>
+                    <default>false</default>
+                    <label>A.M.E.</label>
+                </value>
+                <value>
+                    <fullName>Apostolic</fullName>
+                    <default>false</default>
+                    <label>Apostolic</label>
+                </value>
+                <value>
+                    <fullName>Assembly of God</fullName>
+                    <default>false</default>
+                    <label>Assembly of God</label>
+                </value>
+                <value>
+                    <fullName>Baptist</fullName>
+                    <default>false</default>
+                    <label>Baptist</label>
+                </value>
+                <value>
+                    <fullName>Bible</fullName>
+                    <default>false</default>
+                    <label>Bible</label>
+                </value>
+                <value>
+                    <fullName>Brethren in Christ</fullName>
+                    <default>false</default>
+                    <label>Brethren in Christ</label>
+                </value>
+                <value>
+                    <fullName>C.C.C.U.</fullName>
+                    <default>false</default>
+                    <label>C.C.C.U.</label>
+                </value>
+                <value>
+                    <fullName>Catholic</fullName>
+                    <default>false</default>
+                    <label>Catholic</label>
+                </value>
+                <value>
+                    <fullName>Chicago Central Naz</fullName>
+                    <default>false</default>
+                    <label>Chicago Central Naz</label>
+                </value>
+                <value>
+                    <fullName>Christian</fullName>
+                    <default>false</default>
+                    <label>Christian</label>
+                </value>
+                <value>
+                    <fullName>Church of Christ</fullName>
+                    <default>false</default>
+                    <label>Church of Christ</label>
+                </value>
+                <value>
+                    <fullName>Church of God</fullName>
+                    <default>false</default>
+                    <label>Church of God</label>
+                </value>
+                <value>
+                    <fullName>Congregational</fullName>
+                    <default>false</default>
+                    <label>Congregational</label>
+                </value>
+                <value>
+                    <fullName>Covenant</fullName>
+                    <default>false</default>
+                    <label>Covenant</label>
+                </value>
+                <value>
+                    <fullName>E. Michigan Nazarene</fullName>
+                    <default>false</default>
+                    <label>E. Michigan Nazarene</label>
+                </value>
+                <value>
+                    <fullName>Episcopal</fullName>
+                    <default>false</default>
+                    <label>Episcopal</label>
+                </value>
+                <value>
+                    <fullName>Evang. Mennonite</fullName>
+                    <default>false</default>
+                    <label>Evang. Mennonite</label>
+                </value>
+                <value>
+                    <fullName>Evang. Unit. Brethrn</fullName>
+                    <default>false</default>
+                    <label>Evang. Unit. Brethrn</label>
+                </value>
+                <value>
+                    <fullName>Evangelical</fullName>
+                    <default>false</default>
+                    <label>Evangelical</label>
+                </value>
+                <value>
+                    <fullName>Free</fullName>
+                    <default>false</default>
+                    <label>Free</label>
+                </value>
+                <value>
+                    <fullName>Free Methodist</fullName>
+                    <default>false</default>
+                    <label>Free Methodist</label>
+                </value>
+                <value>
+                    <fullName>Friends</fullName>
+                    <default>false</default>
+                    <label>Friends</label>
+                </value>
+                <value>
+                    <fullName>Greek Orthodox</fullName>
+                    <default>false</default>
+                    <label>Greek Orthodox</label>
+                </value>
+                <value>
+                    <fullName>Hindu</fullName>
+                    <default>false</default>
+                    <label>Hindu</label>
+                </value>
+                <value>
+                    <fullName>Holiness</fullName>
+                    <default>false</default>
+                    <label>Holiness</label>
+                </value>
+                <value>
+                    <fullName>Illinois Dist. Naz</fullName>
+                    <default>false</default>
+                    <label>Illinois Dist. Naz</label>
+                </value>
+                <value>
+                    <fullName>Independent</fullName>
+                    <default>false</default>
+                    <label>Independent</label>
+                </value>
+                <value>
+                    <fullName>Indianapolis Nazaren</fullName>
+                    <default>false</default>
+                    <label>Indianapolis Nazaren</label>
+                </value>
+                <value>
+                    <fullName>Jewish Lutheran</fullName>
+                    <default>false</default>
+                    <label>Jewish Lutheran</label>
+                </value>
+                <value>
+                    <fullName>Mennonite</fullName>
+                    <default>false</default>
+                    <label>Mennonite</label>
+                </value>
+                <value>
+                    <fullName>Michigan Dist. Naz Missionary</fullName>
+                    <default>false</default>
+                    <label>Michigan Dist. Naz Missionary</label>
+                </value>
+                <value>
+                    <fullName>Missionary Alliance</fullName>
+                    <default>false</default>
+                    <label>Missionary Alliance</label>
+                </value>
+                <value>
+                    <fullName>Moravian</fullName>
+                    <default>false</default>
+                    <label>Moravian</label>
+                </value>
+                <value>
+                    <fullName>Mormon</fullName>
+                    <default>false</default>
+                    <label>Mormon</label>
+                </value>
+                <value>
+                    <fullName>Muslim</fullName>
+                    <default>false</default>
+                    <label>Muslim</label>
+                </value>
+                <value>
+                    <fullName>N. Michigan Nazarene</fullName>
+                    <default>false</default>
+                    <label>N. Michigan Nazarene</label>
+                </value>
+                <value>
+                    <fullName>Nazarene</fullName>
+                    <default>false</default>
+                    <label>Nazarene</label>
+                </value>
+                <value>
+                    <fullName>NE Indiana Nazarene</fullName>
+                    <default>false</default>
+                    <label>NE Indiana Nazarene</label>
+                </value>
+                <value>
+                    <fullName>Non Den. Charismatic</fullName>
+                    <default>false</default>
+                    <label>Non Den. Charismatic</label>
+                </value>
+                <value>
+                    <fullName>Non Denominational</fullName>
+                    <default>false</default>
+                    <label>Non Denominational</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>NW Illinois Nazarene</fullName>
+                    <default>false</default>
+                    <label>NW Illinois Nazarene</label>
+                </value>
+                <value>
+                    <fullName>NW Indiana Nazarene Off Zone</fullName>
+                    <default>false</default>
+                    <label>NW Indiana Nazarene Off Zone</label>
+                </value>
+                <value>
+                    <fullName>Nazarene Off Zone</fullName>
+                    <default>false</default>
+                    <label>Nazarene Off Zone</label>
+                </value>
+                <value>
+                    <fullName>Nazarene East Off Zone</fullName>
+                    <default>false</default>
+                    <label>Nazarene East Off Zone</label>
+                </value>
+                <value>
+                    <fullName>Nazarene West</fullName>
+                    <default>false</default>
+                    <label>Nazarene West</label>
+                </value>
+                <value>
+                    <fullName>Pentecostal</fullName>
+                    <default>false</default>
+                    <label>Pentecostal</label>
+                </value>
+                <value>
+                    <fullName>Plymouth Brethren</fullName>
+                    <default>false</default>
+                    <label>Plymouth Brethren</label>
+                </value>
+                <value>
+                    <fullName>Presbyterian</fullName>
+                    <default>false</default>
+                    <label>Presbyterian</label>
+                </value>
+                <value>
+                    <fullName>Protestant</fullName>
+                    <default>false</default>
+                    <label>Protestant</label>
+                </value>
+                <value>
+                    <fullName>Reformed</fullName>
+                    <default>false</default>
+                    <label>Reformed</label>
+                </value>
+                <value>
+                    <fullName>Salvation Army</fullName>
+                    <default>false</default>
+                    <label>Salvation Army</label>
+                </value>
+                <value>
+                    <fullName>Seventh Day Adventist</fullName>
+                    <default>false</default>
+                    <label>Seventh Day Adventist</label>
+                </value>
+                <value>
+                    <fullName>Social Bretheren</fullName>
+                    <default>false</default>
+                    <label>Social Bretheren</label>
+                </value>
+                <value>
+                    <fullName>SW Indiana Nazarene</fullName>
+                    <default>false</default>
+                    <label>SW Indiana Nazarene</label>
+                </value>
+                <value>
+                    <fullName>Unitarian</fullName>
+                    <default>false</default>
+                    <label>Unitarian</label>
+                </value>
+                <value>
+                    <fullName>United Ch. of Christ</fullName>
+                    <default>false</default>
+                    <label>United Ch. of Christ</label>
+                </value>
+                <value>
+                    <fullName>United Methodist</fullName>
+                    <default>false</default>
+                    <label>United Methodist</label>
+                </value>
+                <value>
+                    <fullName>Unity</fullName>
+                    <default>false</default>
+                    <label>Unity</label>
+                </value>
+                <value>
+                    <fullName>Wesleyan</fullName>
+                    <default>false</default>
+                    <label>Wesleyan</label>
+                </value>
+                <value>
+                    <fullName>Wisconsin Nazarene</fullName>
+                    <default>false</default>
+                    <label>Wisconsin Nazarene</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Residency__c</fullName>
@@ -484,6 +4371,348 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>SACEP_Agreement__c</fullName>
+        <externalId>false</externalId>
+        <label>SACEP Agreement</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_Picklist</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SAT_Composite__c</fullName>
+        <description>EASY Application</description>
+        <externalId>false</externalId>
+        <label>SAT Composite</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SIS_Decision_Codes__c</fullName>
+        <description>To be used for integration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From SIS integration</inlineHelpText>
+        <label>SIS Decision Codes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AC Admit Student</fullName>
+                    <default>false</default>
+                    <label>AC Admit Student</label>
+                </value>
+                <value>
+                    <fullName>AD Admitted</fullName>
+                    <default>false</default>
+                    <label>AD Admitted</label>
+                </value>
+                <value>
+                    <fullName>AH Admit-Hold</fullName>
+                    <default>false</default>
+                    <label>AH Admit-Hold</label>
+                </value>
+                <value>
+                    <fullName>AR Apl-Received</fullName>
+                    <default>false</default>
+                    <label>AR Apl-Received</label>
+                </value>
+                <value>
+                    <fullName>C1 Cancel - Not 1st Choice</fullName>
+                    <default>false</default>
+                    <label>C1 Cancel - Not 1st Choice</label>
+                </value>
+                <value>
+                    <fullName>CA Cancel - Athletics</fullName>
+                    <default>false</default>
+                    <label>CA Cancel - Athletics</label>
+                </value>
+                <value>
+                    <fullName>CB Cancel - Belief-Feel-Mission</fullName>
+                    <default>false</default>
+                    <label>CB Cancel - Belief-Feel-Mission</label>
+                </value>
+                <value>
+                    <fullName>CC Cancel-2 Yr College-May Not Tr</fullName>
+                    <default>false</default>
+                    <label>CC Cancel-2 Yr College-May Not Tr</label>
+                </value>
+                <value>
+                    <fullName>CD Cancel - Duplicate Application</fullName>
+                    <default>false</default>
+                    <label>CD Cancel - Duplicate Application</label>
+                </value>
+                <value>
+                    <fullName>CF Cancel - Distance (too Far)</fullName>
+                    <default>false</default>
+                    <label>CF Cancel - Distance (too Far)</label>
+                </value>
+                <value>
+                    <fullName>CG Obsolete - Cond Grad</fullName>
+                    <default>false</default>
+                    <label>CG Obsolete - Cond Grad</label>
+                </value>
+                <value>
+                    <fullName>CH Checked for Comm Letters</fullName>
+                    <default>false</default>
+                    <label>CH Checked for Comm Letters</label>
+                </value>
+                <value>
+                    <fullName>CN Cancel - Nursing Denial</fullName>
+                    <default>false</default>
+                    <label>CN Cancel - Nursing Denial</label>
+                </value>
+                <value>
+                    <fullName>CT Contingent</fullName>
+                    <default>false</default>
+                    <label>CT Contingent</label>
+                </value>
+                <value>
+                    <fullName>CU Cancel - Unknown College</fullName>
+                    <default>false</default>
+                    <label>CU Cancel - Unknown College</label>
+                </value>
+                <value>
+                    <fullName>DN Denied</fullName>
+                    <default>false</default>
+                    <label>DN Denied</label>
+                </value>
+                <value>
+                    <fullName>EX Expired Application</fullName>
+                    <default>false</default>
+                    <label>EX Expired Application</label>
+                </value>
+                <value>
+                    <fullName>FG 1st time Grad Studnt</fullName>
+                    <default>false</default>
+                    <label>FG 1st time Grad Studnt</label>
+                </value>
+                <value>
+                    <fullName>FI Cancel-Financial</fullName>
+                    <default>false</default>
+                    <label>FI Cancel-Financial</label>
+                </value>
+                <value>
+                    <fullName>GCA Conditional Admit</fullName>
+                    <default>false</default>
+                    <label>GCA Conditional Admit</label>
+                </value>
+                <value>
+                    <fullName>HA Honors App Accepted</fullName>
+                    <default>false</default>
+                    <label>HA Honors App Accepted</label>
+                </value>
+                <value>
+                    <fullName>HC Cancel Honors Prog ONLY</fullName>
+                    <default>false</default>
+                    <label>HC Cancel Honors Prog ONLY</label>
+                </value>
+                <value>
+                    <fullName>HD Honors App Denied</fullName>
+                    <default>false</default>
+                    <label>HD Honors App Denied</label>
+                </value>
+                <value>
+                    <fullName>HI Honors Interview Invitation</fullName>
+                    <default>false</default>
+                    <label>HI Honors Interview Invitation</label>
+                </value>
+                <value>
+                    <fullName>HL Cancel-Health</fullName>
+                    <default>false</default>
+                    <label>HL Cancel-Health</label>
+                </value>
+                <value>
+                    <fullName>HU Honors Cancel: Not Int. In Onu</fullName>
+                    <default>false</default>
+                    <label>HU Honors Cancel: Not Int. In Onu</label>
+                </value>
+                <value>
+                    <fullName>HW Honors App Waitlist</fullName>
+                    <default>false</default>
+                    <label>HW Honors App Waitlist</label>
+                </value>
+                <value>
+                    <fullName>IT Cancel - Fr Intend to Transfer</fullName>
+                    <default>false</default>
+                    <label>IT Cancel - Fr Intend to Transfer</label>
+                </value>
+                <value>
+                    <fullName>LD Cancel-Learning Dis</fullName>
+                    <default>false</default>
+                    <label>LD Cancel-Learning Dis</label>
+                </value>
+                <value>
+                    <fullName>MG Moved to Grad School</fullName>
+                    <default>false</default>
+                    <label>MG Moved to Grad School</label>
+                </value>
+                <value>
+                    <fullName>MJ Cancel-Major Nt Here</fullName>
+                    <default>false</default>
+                    <label>MJ Cancel-Major Nt Here</label>
+                </value>
+                <value>
+                    <fullName>MR Cancel-Married</fullName>
+                    <default>false</default>
+                    <label>MR Cancel-Married</label>
+                </value>
+                <value>
+                    <fullName>NI Cancel-No Interest</fullName>
+                    <default>false</default>
+                    <label>NI Cancel-No Interest</label>
+                </value>
+                <value>
+                    <fullName>NS No Show</fullName>
+                    <default>false</default>
+                    <label>NS No Show</label>
+                </value>
+                <value>
+                    <fullName>PA Pre-Accept</fullName>
+                    <default>false</default>
+                    <label>PA Pre-Accept</label>
+                </value>
+                <value>
+                    <fullName>PB Probation</fullName>
+                    <default>false</default>
+                    <label>PB Probation</label>
+                </value>
+                <value>
+                    <fullName>PC Preliminary Review Complete</fullName>
+                    <default>false</default>
+                    <label>PC Preliminary Review Complete</label>
+                </value>
+                <value>
+                    <fullName>PE Cancel-Personal</fullName>
+                    <default>false</default>
+                    <label>PE Cancel-Personal</label>
+                </value>
+                <value>
+                    <fullName>PR Prospect</fullName>
+                    <default>false</default>
+                    <label>PR Prospect</label>
+                </value>
+                <value>
+                    <fullName>PV Provisional</fullName>
+                    <default>false</default>
+                    <label>PV Provisional</label>
+                </value>
+                <value>
+                    <fullName>RA Review - Academic</fullName>
+                    <default>false</default>
+                    <label>RA Review - Academic</label>
+                </value>
+                <value>
+                    <fullName>RC Review Committee</fullName>
+                    <default>false</default>
+                    <label>RC Review Committee</label>
+                </value>
+                <value>
+                    <fullName>RG ReApplicant Graduate</fullName>
+                    <default>false</default>
+                    <label>RG ReApplicant Graduate</label>
+                </value>
+                <value>
+                    <fullName>RH Review - Hold</fullName>
+                    <default>false</default>
+                    <label>RH Review - Hold</label>
+                </value>
+                <value>
+                    <fullName>RJ Cancel-Reject</fullName>
+                    <default>false</default>
+                    <label>RJ Cancel-Reject</label>
+                </value>
+                <value>
+                    <fullName>RP Review - Preliminary</fullName>
+                    <default>false</default>
+                    <label>RP Review - Preliminary</label>
+                </value>
+                <value>
+                    <fullName>RU Review - Update</fullName>
+                    <default>false</default>
+                    <label>RU Review - Update</label>
+                </value>
+                <value>
+                    <fullName>SC Cancel-r Yr College</fullName>
+                    <default>false</default>
+                    <label>SC Cancel-r Yr College</label>
+                </value>
+                <value>
+                    <fullName>SG Senior Graduate</fullName>
+                    <default>false</default>
+                    <label>SG Senior Graduate</label>
+                </value>
+                <value>
+                    <fullName>SP Special</fullName>
+                    <default>false</default>
+                    <label>SP Special</label>
+                </value>
+                <value>
+                    <fullName>SV Cancel-Service</fullName>
+                    <default>false</default>
+                    <label>SV Cancel-Service</label>
+                </value>
+                <value>
+                    <fullName>UN Cancel-Unknown</fullName>
+                    <default>false</default>
+                    <label>UN Cancel-Unknown</label>
+                </value>
+                <value>
+                    <fullName>WK Cancel-Work</fullName>
+                    <default>false</default>
+                    <label>WK Cancel-Work</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Scholarship_Accepted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>For EASY</description>
+        <externalId>false</externalId>
+        <label>Scholarship-Accepted</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Scholarship_Awarded__c</fullName>
+        <description>For EASY</description>
+        <externalId>false</externalId>
+        <label>Scholarship Awarded</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scholarship_Recommended__c</fullName>
+        <description>For EASY</description>
+        <externalId>false</externalId>
+        <label>Scholarship-Recommended</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>School_College__c</fullName>
         <externalId>false</externalId>
         <label>School / College</label>
@@ -494,6 +4723,168 @@
         <valueSet>
             <restricted>true</restricted>
             <valueSetName>School_College</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Schools_Applied_To__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>zzSchools Applied To</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Self_Reported_ACT__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Highest composite</inlineHelpText>
+        <label>zzSelf-Reported ACT</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Self_Reported_English_Proficiency_Score__c</fullName>
+        <description>EASY Application</description>
+        <externalId>false</externalId>
+        <label>Self-Reported English Proficiency Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Self_Reported_English_Proficiency__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>Self-Reported English Proficiency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Self_Reported_GMAT__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>Self-Reported GMAT</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Self_Reported_GRE__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>Self-Reported GRE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Self_Reported_Graduation_Date__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Graduation Date/Expected Graduation Date:</inlineHelpText>
+        <label>Self-Reported Graduation Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Self_Reported_SAT__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Highest composite</inlineHelpText>
+        <label>Self-Reported SAT</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Attitude__c</fullName>
+        <externalId>false</externalId>
+        <label>zzService Attitude</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sites__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sites</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Ethos__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Sites</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Ethos__c</referenceTo>
+        <relationshipLabel>Applications (Sites)</relationshipLabel>
+        <relationshipName>Applications4</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sleep_Habit__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>zzRoommate Sleep Habit</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Morning person</fullName>
+                    <default>false</default>
+                    <label>Morning person</label>
+                </value>
+                <value>
+                    <fullName>Night owl</fullName>
+                    <default>false</default>
+                    <label>Night owl</label>
+                </value>
+                <value>
+                    <fullName>No preference</fullName>
+                    <default>false</default>
+                    <label>No preference</label>
+                </value>
+            </valueSetDefinition>
         </valueSet>
     </fields>
     <fields>
@@ -511,6 +4902,173 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Study_Habits__c</fullName>
+        <description>From EASY application</description>
+        <externalId>false</externalId>
+        <label>zzStudy Habits</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitted_Date__c</fullName>
+        <description>Date Application was submitted</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Submitted Date</inlineHelpText>
+        <label>Submitted Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Suffix__c</fullName>
+        <description>Custom field to hold Applicant&apos;s response</description>
+        <externalId>false</externalId>
+        <label>Suffix</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Jr.</fullName>
+                    <default>false</default>
+                    <label>Jr.</label>
+                </value>
+                <value>
+                    <fullName>M.D.</fullName>
+                    <default>false</default>
+                    <label>M.D.</label>
+                </value>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                    <label>PA</label>
+                </value>
+                <value>
+                    <fullName>PE</fullName>
+                    <default>false</default>
+                    <label>PE</label>
+                </value>
+                <value>
+                    <fullName>R.D.</fullName>
+                    <default>false</default>
+                    <label>R.D.</label>
+                </value>
+                <value>
+                    <fullName>R.N.</fullName>
+                    <default>false</default>
+                    <label>R.N.</label>
+                </value>
+                <value>
+                    <fullName>Sr.</fullName>
+                    <default>false</default>
+                    <label>Sr.</label>
+                </value>
+                <value>
+                    <fullName>II</fullName>
+                    <default>false</default>
+                    <label>II</label>
+                </value>
+                <value>
+                    <fullName>III</fullName>
+                    <default>false</default>
+                    <label>III</label>
+                </value>
+                <value>
+                    <fullName>IV</fullName>
+                    <default>false</default>
+                    <label>IV</label>
+                </value>
+                <value>
+                    <fullName>V</fullName>
+                    <default>false</default>
+                    <label>V</label>
+                </value>
+                <value>
+                    <fullName>VI</fullName>
+                    <default>false</default>
+                    <label>VI</label>
+                </value>
+                <value>
+                    <fullName>VII</fullName>
+                    <default>false</default>
+                    <label>VII</label>
+                </value>
+                <value>
+                    <fullName>VIII</fullName>
+                    <default>false</default>
+                    <label>VIII</label>
+                </value>
+                <value>
+                    <fullName>IX</fullName>
+                    <default>false</default>
+                    <label>IX</label>
+                </value>
+                <value>
+                    <fullName>X</fullName>
+                    <default>false</default>
+                    <label>X</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Territory_Management_Applicant_Type__c</fullName>
+        <description>Maps granular Applicant Type values to the values used by the territory management system.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Applicant_Type__c, &apos;Freshman&apos;), &apos;Freshman&apos;, 
+IF(ISPICKVAL(Applicant_Type__c, &apos;Transfer&apos;), &apos;Transfer&apos;, 
+IF(ISPICKVAL(Applicant_Type__c, &apos;Graduate&apos;), &apos;Graduate&apos;, 
+IF(ISPICKVAL(Applicant_Type__c, &quot;Master&apos;s&quot;), &apos;Graduate&apos;, 
+IF(ISPICKVAL(Applicant_Type__c, &apos;Doctoral&apos;), &apos;Graduate&apos;, 
+IF(ISPICKVAL(Applicant_Type__c, &apos;Graduate Certificate&apos;), &apos;Graduate&apos;, 
+IF(ISPICKVAL(Applicant_Type__c, &apos;Undergraduate Certificate&apos;), &apos;Transfer&apos;, &apos;Unknown&apos;)))))))</formula>
+        <inlineHelpText>Maps granular Applicant Type values to the values used by the territory management system.</inlineHelpText>
+        <label>zzTerritory Management Applicant Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Test_Summary__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Test Score Summary Object</description>
+        <externalId>false</externalId>
+        <label>Test Summary</label>
+        <referenceTo>Test_Summary__c</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Transfer_Credit_Official__c</fullName>
+        <description>From EASY</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use numbers, no letters</inlineHelpText>
+        <label>Transfer Credit-Official</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>User_Created__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Only used for test classes</description>
@@ -520,20 +5078,251 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
+    <fields>
+        <fullName>VA_Beneficiary_Relationship__c</fullName>
+        <externalId>false</externalId>
+        <label>VA Beneficiary Relationship</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>I am the beneficiary</fullName>
+                    <default>false</default>
+                    <label>I am the beneficiary</label>
+                </value>
+                <value>
+                    <fullName>I am the spouse of the beneficiary</fullName>
+                    <default>false</default>
+                    <label>I am the spouse of the beneficiary</label>
+                </value>
+                <value>
+                    <fullName>I am a dependent of the beneficiary</fullName>
+                    <default>false</default>
+                    <label>I am a dependent of the beneficiary</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VA_Chapter_Other__c</fullName>
+        <externalId>false</externalId>
+        <label>VA Chapter Other</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VA_Chapter__c</fullName>
+        <externalId>false</externalId>
+        <label>VA Chapter</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Chapter 1606</fullName>
+                    <default>false</default>
+                    <label>Chapter 1606</label>
+                </value>
+                <value>
+                    <fullName>Chapter 1607</fullName>
+                    <default>false</default>
+                    <label>Chapter 1607</label>
+                </value>
+                <value>
+                    <fullName>Chapter 30</fullName>
+                    <default>false</default>
+                    <label>Chapter 30</label>
+                </value>
+                <value>
+                    <fullName>Chapter 31</fullName>
+                    <default>false</default>
+                    <label>Chapter 31</label>
+                </value>
+                <value>
+                    <fullName>Chapter 33</fullName>
+                    <default>false</default>
+                    <label>Chapter 33</label>
+                </value>
+                <value>
+                    <fullName>Chapter 33 Yellow Ribbon</fullName>
+                    <default>false</default>
+                    <label>Chapter 33 Yellow Ribbon</label>
+                </value>
+                <value>
+                    <fullName>Chapter 35</fullName>
+                    <default>false</default>
+                    <label>Chapter 35</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Veteran__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Have you served in the U.S. Armed Forces?</inlineHelpText>
+        <label>Veteran?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_Picklist</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Violation_Reason__c</fullName>
+        <description>For EASY application</description>
+        <externalId>false</externalId>
+        <label>Violation Reason</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Visa_Needed__c</fullName>
+        <description>This is to issue the correct type of visa for admitted students</description>
+        <externalId>false</externalId>
+        <label>Visa Needed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>F1</fullName>
+                    <default>false</default>
+                    <label>F1</label>
+                </value>
+                <value>
+                    <fullName>J1</fullName>
+                    <default>false</default>
+                    <label>J1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Withdrawal_Reason__c</fullName>
+        <description>Reason the applicant withdrew the application</description>
+        <externalId>false</externalId>
+        <label>Withdrawal Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Withdrawal_Reason</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Work_Ethic__c</fullName>
+        <externalId>false</externalId>
+        <label>zzWork Ethic</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Years_of_Experience__c</fullName>
+        <description>From EASY Application</description>
+        <externalId>false</externalId>
+        <label>Years of Experience</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1-9 years</fullName>
+                    <default>false</default>
+                    <label>1-9 years</label>
+                </value>
+                <value>
+                    <fullName>10 or more years</fullName>
+                    <default>false</default>
+                    <label>10 or more years</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
     <label>Application</label>
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
+        <columns>Contact__c</columns>
         <columns>Intended_Program__c</columns>
+        <columns>Intended_Term_of_Entry__c</columns>
         <columns>Application_Status__c</columns>
-        <columns>CREATED_DATE</columns>
+        <columns>Admission_Decision__c</columns>
+        <columns>Generic_Filter_1__c</columns>
+        <columns>Migration_Source__c</columns>
+        <columns>Opportunity__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
     <listViews>
         <fullName>All1</fullName>
+        <columns>NAME</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Contact__c</field>
+            <operation>equals</operation>
+        </filters>
         <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Colleague</fullName>
+        <columns>NAME</columns>
+        <columns>Contact__c</columns>
+        <columns>Intended_Program__c</columns>
+        <columns>Intended_Term_of_Entry__c</columns>
+        <columns>Academic_Program__c</columns>
+        <columns>Entry_Term__c</columns>
+        <columns>Application_Status__c</columns>
+        <columns>Applicant_Type__c</columns>
+        <columns>Admission_Application_Type__c</columns>
+        <columns>Admission_Decision__c</columns>
+        <columns>Admission_Decision_Type__c</columns>
+        <columns>ERP_Application_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Migration_Source__c</field>
+            <operation>equals</operation>
+            <value>Colleague</value>
+        </filters>
+        <label>Colleague</label>
     </listViews>
     <nameField>
         <displayFormat>A-{0000000}</displayFormat>
@@ -557,6 +5346,18 @@
         <openType>replace</openType>
         <protected>false</protected>
         <url>/apex/ApplicationAdminView?contactId={!Application__c.ContactId__c}&amp;applicationId={!Application__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>CloneApplication</fullName>
+        <availability>online</availability>
+        <description>/apex/ApplicationClone?id={!Application__c.Id}</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Clone Application</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/ApplicationClone?id={!Application__c.Id}</url>
     </webLinks>
     <webLinks>
         <fullName>Review</fullName>

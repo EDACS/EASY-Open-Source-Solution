@@ -229,6 +229,7 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Active__c</fields>
         <fields>RECORDTYPE</fields>
         <fields>Label__c</fields>
         <fields>Display_Order__c</fields>

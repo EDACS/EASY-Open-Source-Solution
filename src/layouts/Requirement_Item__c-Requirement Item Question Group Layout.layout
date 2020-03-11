@@ -143,6 +143,10 @@
                 <behavior>Edit</behavior>
                 <field>Generic_Filter_4__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Related_List_Where_Clause__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -177,6 +181,7 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Active__c</fields>
         <fields>RECORDTYPE</fields>
         <fields>Label__c</fields>
         <fields>Display_Order__c</fields>
@@ -199,7 +204,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1U00000370x9</masterLabel>
+        <masterLabel>00h2E00000J1t7c</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

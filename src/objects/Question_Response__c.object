@@ -291,9 +291,9 @@
         <description>Currency value for this response.</description>
         <externalId>false</externalId>
         <label>Value Currency</label>
-        <precision>16</precision>
+        <precision>18</precision>
         <required>false</required>
-        <scale>2</scale>
+        <scale>4</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
     </fields>

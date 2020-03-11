@@ -153,7 +153,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
         <fullName>Application_Review_Header</fullName>
         <description>Top level section of the application review page.</description>
@@ -208,6 +208,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Comments__c</fullName>
+        <description>Application Review Comments</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comments become part of a student&apos;s academic record</inlineHelpText>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Completed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -215,6 +226,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Conditions__c</fullName>
+        <description>Conditions associated with Conditional or Probational Admission</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Conditions associated with Conditional or Probational Admission</inlineHelpText>
+        <label>Conditions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Date_Completed__c</fullName>
@@ -247,6 +269,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Official_Transcripts_All_Grad_Credits__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EDD Review Form</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Official transcripts of all graduate credits from previously attended colleges/universities</inlineHelpText>
+        <label>Official Transcripts-All Grad Credits</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Start_Date__c</fullName>

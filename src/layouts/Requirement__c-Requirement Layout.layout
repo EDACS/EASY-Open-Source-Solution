@@ -158,12 +158,13 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Display_Order__c</fields>
+        <fields>Active__c</fields>
         <fields>RECORDTYPE</fields>
         <fields>Student_Type__c</fields>
         <fields>Citizenship__c</fields>
         <fields>Degree_Type__c</fields>
         <fields>Instructions__c</fields>
-        <fields>Active__c</fields>
         <relatedList>Requirement_Item__c.Requirement__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
@@ -172,7 +173,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1U00000370wy</masterLabel>
+        <masterLabel>00h2E00000J1t7R</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

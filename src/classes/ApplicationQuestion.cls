@@ -290,7 +290,7 @@ public class ApplicationQuestion {
                 if (qd.RecordType.DeveloperName.equals('Checkbox') && Boolean.valueOf(qd.ValueCheckbox__c) == (Boolean)resp) {
                     satisfied = true;
                     break;
-                } else if (qd.RecordType.DeveloperName.equals('Picklist') && String.isNotBlank(String.valueOf(resp)) && qd.Value__c.equals((String)resp)) {
+                } else if (qd.RecordType.DeveloperName.equals('Picklist') && String.isNotBlank(String.valueOf(resp)) && qd.Value__c.equals((String)cq.response.ValueText__c)) {
                     satisfied = true;
                     break;
                 } else if (qd.RecordType.DeveloperName.equals('Multi_Select_Picklist')) {
@@ -510,7 +510,7 @@ public class ApplicationQuestion {
                     'Hide_Applicant_Type__c, Hide_Citizenship__c, Hide_Student_Type__c, Number_of_Applications_Limit__c,'+
                     'Generic_Filter_1__c, Generic_Filter_2__c, Generic_Filter_3__c, Generic_Filter_4__c '+
                     'FROM Program__c '+
-                    'WHERE Hide_from_Application__c = false AND Active__c = true ';
+                    'WHERE Hide_from_Application__c = false AND Active__c = true AND RecordType.DeveloperName = \'Academic_Program\' ';
 
             List<String> dateStrings = new List<String>{
                     '\'In the future\'', '\'Right away\''
@@ -785,9 +785,9 @@ public class ApplicationQuestion {
             else if (fieldType.equals('Currency'))
                 response.ValueCurrency__c = Double.valueOf(resp);
             else if (fieldType.equals('Date'))
-                response.ValueDate__c = Date.valueOf(resp);
+                response.ValueDate__c = date.parse(resp);
             else if (fieldType.equals('DateTime'))
-                response.ValueDateTime__c = Datetime.valueOfGmt(resp);
+                response.ValueDateTime__c = dateTime.parse(resp);
             else if (fieldType.equals('Email'))
                 response.ValueEmail__c = resp;
             else if (fieldType.equals('Number') || fieldType.equals('Decimal') || fieldType.equals('Integer'))

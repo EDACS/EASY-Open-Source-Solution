@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
-        <fullName>College of Arts and Sciences</fullName>
+        <fullName>College of Arts &amp; Sciences</fullName>
         <default>false</default>
-        <label>College of Arts and Sciences</label>
+        <label>College of Arts &amp; Sciences</label>
     </customValue>
     <customValue>
-        <fullName>College of Health Professions</fullName>
+        <fullName>College of Life &amp; Health Sciences</fullName>
         <default>false</default>
-        <label>College of Health Professions</label>
-    </customValue>
-    <customValue>
-        <fullName>Graduate</fullName>
-        <default>false</default>
-        <label>Graduate</label>
+        <label>College of Life &amp; Health Sciences</label>
     </customValue>
     <customValue>
         <fullName>School of Business</fullName>
@@ -25,6 +20,45 @@
         <default>false</default>
         <label>School of Education</label>
     </customValue>
+    <customValue>
+        <fullName>School of Engineering</fullName>
+        <default>false</default>
+        <label>School of Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Graduate &amp; Continuing Studies</fullName>
+        <default>false</default>
+        <label>School of Graduate &amp; Continuing Studies</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Music</fullName>
+        <default>false</default>
+        <label>School of Music</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Theology &amp; Christian Ministry</fullName>
+        <default>false</default>
+        <label>School of Theology &amp; Christian Ministry</label>
+    </customValue>
+    <customValue>
+        <fullName>College of Health Professions</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>College of Health Professions</label>
+    </customValue>
+    <customValue>
+        <fullName>College of Arts and Sciences</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>College of Arts and Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Graduate</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Graduate</label>
+    </customValue>
+    <description>Used for lookup field on EASY&apos;s program object.</description>
     <masterLabel>School / College</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

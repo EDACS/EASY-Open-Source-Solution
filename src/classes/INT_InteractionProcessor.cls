@@ -420,7 +420,11 @@ public class INT_InteractionProcessor {
      * @return leadsToReconvert, a List of possible Database.LeadConvert error records to try and reconvert.
      */
     private List<Database.LeadConvert> convertLeads(List<Database.LeadConvert> leadsToConvert) {
-        
+		Map<Id, Interaction__c> interactionsProgramAmount = new Map<Id, Interaction__c>([
+				SELECT Id, Academic_Program__r.Opportunity_Program_Amount__c
+				FROM Interaction__c
+				WHERE Id IN :interactionMap.keySet()
+		]);
         // Get set of all lead converts where contact has been specified but not account
         Set<Id> contactIdsMissingAccount = new Set<Id>();
         for (Database.LeadConvert lc:leadsToConvert) {
@@ -455,7 +459,9 @@ public class INT_InteractionProcessor {
                         CloseDate = System.today(),
                         StageName = interaction.Opportunity_Stage__c,
                         Opportunity_Key__c = lcr.getContactId() + interaction.Opportunity_Key__c,
-                        AccountId = lcr.getAccountId()
+                        AccountId = lcr.getAccountId(),
+                        Amount = interactionsProgramAmount.containsKey(interaction.Id) ?
+								interactionsProgramAmount.get(interaction.Id).Academic_Program__r.Opportunity_Program_Amount__c: 0
                     );
                     intMappingService.applyDataToSObject(interaction, newOppty);
                     interaction.Opportunity__r = newOppty;

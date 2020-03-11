@@ -103,10 +103,11 @@ public class ApplicationQuestionSection {
             g.processValues(addData);
         }
     }
-    
     public void pushValuesToObjects() {
         
         if (con == null && application == null) return;
+
+
         
         Set<String> allContactFields = new Set<String>();
         Set<String> allApplicationFields = new Set<String>();
